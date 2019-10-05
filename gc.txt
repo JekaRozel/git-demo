@@ -1,7 +1,35 @@
+git clone [--template=<template_directory>]
+	  [-l] [-s] [--no-hardlinks] [-q] [-n] [--bare] [--mirror]
+	  [-o <name>] [-b <name>] [-u <upload-pack>] [--reference <repository>]
+	  [--dissociate] [--separate-git-dir <git dir>]
+	  [--depth <depth>] [--[no-]single-branch] [--no-tags]
+	  [--recurse-submodules[=<pathspec>]] [--[no-]shallow-submodules]
+	  [--[no-]remote-submodules] [--jobs <n>] [--] <repository>
+	  [<directory>]
+\\\\\\\\\\\\\\\
+git config [<file-option>] [--type=<type>] [--show-origin] [-z|--null] name [value [value_regex]]
+git config [<file-option>] [--type=<type>] --add name value
+git config [<file-option>] [--type=<type>] --replace-all name value [value_regex]
+git config [<file-option>] [--type=<type>] [--show-origin] [-z|--null] --get name [value_regex]
+git config [<file-option>] [--type=<type>] [--show-origin] [-z|--null] --get-all name [value_regex]
+git config [<file-option>] [--type=<type>] [--show-origin] [-z|--null] [--name-only] --get-regexp name_regex [value_regex]
+git config [<file-option>] [--type=<type>] [-z|--null] --get-urlmatch name URL
+git config [<file-option>] --unset name [value_regex]
+git config [<file-option>] --unset-all name [value_regex]
+git config [<file-option>] --rename-section old_name new_name
+git config [<file-option>] --remove-section name
+git config [<file-option>] [--show-origin] [-z|--null] [--name-only] -l | --list
+git config [<file-option>] --get-color name [default]
+git config [<file-option>] --get-colorbool name [stdout-is-tty]
+git config [<file-option>] -e | --edit
+/////////////////////////////////
+git remote -v
+git remote set-url origin скопированная с репозитория ссылка или SSH
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 git commands
 git clone url и папку куда сохроняем на компе копировать с репозитория
-git add добавить файлы
+git add добавить файлы (идексировать файл)
 git commit зафиксировать изменениея Обязательно комментарий -am "комментарий"
-git push копировать в репозиторий
+git push отправить в репозиторий
 git pull подтянуть новые файлы с репозитория 
 
