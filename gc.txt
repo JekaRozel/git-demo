@@ -1,0 +1,6 @@
+git commands
+git clone url копировать с репозитория
+git add добавить файлы
+git commit зафиксировать изменениея
+git push копировать в репозиторий
+
