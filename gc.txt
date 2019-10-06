@@ -23,13 +23,27 @@ git config [<file-option>] --get-color name [default]
 git config [<file-option>] --get-colorbool name [stdout-is-tty]
 git config [<file-option>] -e | --edit
 /////////////////////////////////
+
 git remote -v
 git remote set-url origin скопированная с репозитория ссылка или SSH
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 git commands
 git clone url и папку куда сохроняем на компе копировать с репозитория
 git add добавить файлы (идексировать файл)
 git commit зафиксировать изменениея Обязательно комментарий -am "комментарий"
 git push отправить в репозиторий
 git pull подтянуть новые файлы с репозитория 
+git status -s проверка состояния 
+git log найти коммит, содержащий некоторый искомый файл --stat --summary
+git checkout Switch branches or restore working tree files
+git mv - Move or rename a file, a directory, or a symlink
+git rm - Remove files from the working tree and from the index
+
+
+
+
+
+
+
 
