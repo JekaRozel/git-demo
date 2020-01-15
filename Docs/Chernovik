@@ -1,0 +1,88 @@
+sysstat	/ mpstat | grep -A 5 "%idle" | tail -n 1 | awk -F " " '{print 100 - $ 12}'a
+
+создал файл 
+/etc/environment:
+CLUTTER_PAINT=disable-clipped-redraws:disable-culling
+CLUTTER_VBLANK=none
+
+sudo apt install software-properties-common python-software-properties установка ppa репозиториев
+sudo cat /proc/sys/vm/swappiness размер файла swap
+https://www.udemy.com/ru/topic/java/free/
+выполнить файл(установка идеи) ./idea.sh
+lsof список процессов запущенных приложением
+
+Для курса Стэпик джаваВэбСервер
+Что из этого я знаю:
+Примитивные типы, переполнение примитивных типов
+Объекты, классы, наследование , полиморфизм, инкапсуляция
+Область видимости переменой, статические переменные
+Ветвления и циклы
+Преобразования примитивных типов
+Интерфейс, реализация интерфейса
+Операторы
+Стек, куча
+private, protected, public
+Reflection(позволяет узнать какого класса Объект и внутренности)
+
+спагетти код - код в котором неясно где искать ошибку
+
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
+wiki.jetbrains.net/intellij/Creating_and_importing_Maven_projects
+
+127.0.0.1
+80 - стантдартный порт для HTTP запросов
+apt (для дебиан) - yum
+классификация gTLD (generic Top-Level Domains), куда вошли домены .com, .edu, .net, .org, .int, .gov и .mil. 
+
+ feature branches (изолированная работа каждого разработчика над своей задачей)
+
+tmux veget git htop zsh
+
+разница между flatpack и snap
+google stadia
+hebernate, сервера на java (tomcat и jeti для web) (jboss и glassfish)
+Spring Core, Spring Boot, Spring NVC, Timelive, Spring Data (JDBC). Что это, для чего и как использовать. Почитать Spring in action. сайт https://mkyong.com/ 
+
+softScills:
+общение, английский, публичные выступления, определиться чего я хочу.
+
+	junior должен знать: 
+Принципы ООП хорошо знать, ЯП, методы объекта Object, основные коллекшен фреймоворки и интерфейсы, понятие о многопоточности, SQL(лучше posgrest не mySQL), стек технологий hibernate, Spring core boot date jdbc, rеs(json) сервисы. !!!Алгоритмы - поверхностно, справочники - для справки???
+	Книги: 
+1) Философия Java, Хеад Ферст
+2) Чистый код, Рефакторинг Фаулера
+3) Java Softwear Development Principals Patterns and practices Robert Martin Только в оригинале.
+	junior должен начинать с:
+core языка, английский, выполнять все примеры из литературы, не сходить с выбранного пути.
+			
+!!!!Мониторить что востребовано в вакансиях
+
+x.toString(), Integer.toString(x); ""+x;
+String.valueOf(x); Integer.valueOf(x);
+Integer.parseInt(str);
+String.join(" ", words)//массив words через пробел в строку.
+    Теория из видосов немчинского.
+Путаница версий java: 1; java 2 - java 2(1.4); 5(java2 (1.5)); 6(java 2 (1.6))...
+cms content menegment systems (системы управления контентом) WorldPress Joomla
+для микросервисов используют spring.
+парадигма - способ мышления (восприятия).
+компиляция - превращени исходного кода в машинный кода / компайл тайм - процесс превращения исходного кода в бинарный (javac поиск зависимостей библиотек) \ ран тайм
+API application programming interface - то через что работают с объектом должно быть public (остальное private). Этим определяется уровень доступа (инкапсуляции). Static - значит что это общий (метод/поле) для всех обектов этого класса. То что не Static относится к конкретному эеземпляру объекта. (лучеше не использовать).
+JDBC (java data base connectivity) драйвер для баз данных.
+JPA java persistans architect 
+не стоит тратить сейчас время на Swing/SWT и FX (для ui). Отдать пердпочтение веб интерфейсу и спрингу.
+JSP java server pages (для веба)
+Доменная модель. начинаем писать приложение с "декомпозиции предметной области" - выписываем все объекты которые будут задействованы определяем их свойства. дальше бизнес логика(логика взаимодействий между объектами), DAO (data access logic) работа с базой данных, UI слой. Это интерпрайз паттерн domain model.   	
+
+	Maven
+Собирает проект, создаёт jar-архивы, генерирует документацию.
+Плюс - управление зависимостями (сторонних библиотек), не зависит от ОС.
+
+
+
+
+
+
+
+
