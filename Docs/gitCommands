@@ -3,4 +3,9 @@ ssh-keygen -t rsa -b 4096 -C "comments" можно и без -b 4096
 git config --global user.name "name"
 git config --global user.email "email"
 git config --list --show-origin 
-git status
+git remote -v проверка что мы в origin
+git status преверка что ждёт коммита
+git add file добавляем в коммит ожидающий файл
+git commit -m "comments" создание коммита с коментарием
+git log 
+git push синхронизация локального и удалённого репозитория
