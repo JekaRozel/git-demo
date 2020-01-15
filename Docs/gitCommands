@@ -3,4 +3,5 @@ ssh-keygen -t rsa -b 4096 -C "comments" можно и без -b 4096
 git config --global user.name "name"
 git config --global user.email "email"
 git config --list --show-origin 
+git status
 
