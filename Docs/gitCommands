@@ -1,4 +1,5 @@
 загрузить можн git-scm.com/downloads
+git clone "ключ с гита"
 ssh-keygen -t rsa -b 4096 -C "comments" можно и без -b 4096
 git config --global user.name "name"
 git config --global user.email "email"
