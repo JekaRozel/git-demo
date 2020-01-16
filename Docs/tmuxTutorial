@@ -1,5 +1,5 @@
 tmux new-sesion -s nameOfSession 
-tmus attach -t nameOfSessiont
+tmux attach -t nameOfSessiont
 ctr+b command
 ctr+b c - create
 ctr+b 1 2 3 4 - open 1 2 3 4 window
