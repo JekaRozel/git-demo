@@ -75,11 +75,15 @@ JPA java persistans architect
 JSP java server pages (для веба)
 Доменная модель. начинаем писать приложение с "декомпозиции предметной области" - выписываем все объекты которые будут задействованы определяем их свойства. дальше бизнес логика(логика взаимодействий между объектами), DAO (data access logic) работа с базой данных, UI слой. Это интерпрайз паттерн domain model.   	
 
+road map ха-ха:
+Head First Java, EduTools IDE, тесты, смежные технологии (frontend, HTTP, web API приложения реализуемые RESTful or GraphQL, JSON or XML),(backend, web-сервер, SQL #Head First, JavaScript(vaadin сам собирает Javascript); Pet project, Spring(Core, MVC, Web-MVC, Security) (JHipster - кодогенератор), тестирование кода - JUnit or Mockito. Sonar - валидация кода, Hadoop -большой объем данных, управление жизненным циклом ПО - Maven/Gradle. 
+
+
 	Maven
 Собирает проект, создаёт jar-архивы, генерирует документацию.
 Плюс - управление зависимостями (сторонних библиотек), не зависит от ОС.
 
-
+S
 
 
 
