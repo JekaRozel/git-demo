@@ -1,5 +1,8 @@
 sysstat	/ mpstat | grep -A 5 "%idle" | tail -n 1 | awk -F " " '{print 100 - $ 12}'a
 
+<img src="{...}"> в кавычках твои данные
+linux neofetch 	miral-shell
+для облегчения elementary: 
 создал файл 
 /etc/environment:
 CLUTTER_PAINT=disable-clipped-redraws:disable-culling
@@ -24,8 +27,6 @@ lsof список процессов запущенных приложением
 private, protected, public
 Reflection(позволяет узнать какого класса Объект и внутренности)
 
-спагетти код - код в котором неясно где искать ошибку
-
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 wiki.jetbrains.net/intellij/Creating_and_importing_Maven_projects
@@ -36,9 +37,9 @@ apt (для дебиан) - yum
 классификация gTLD (generic Top-Level Domains), куда вошли домены .com, .edu, .net, .org, .int, .gov и .mil. 
 
  feature branches (изолированная работа каждого разработчика над своей задачей)
-
+ 
+ Что надо бы знать:
 tmux veget git htop zsh
-
 разница между flatpack и snap
 google stadia
 hebernate, сервера на java (tomcat и jeti для web) (jboss и glassfish)
@@ -49,12 +50,12 @@ String.valueOf(x); Integer.valueOf(x);
 int a = Integer.parseInt(str);
 String.join(" ", words)//массив words через пробел в строку.
 char []c = str.toCharArray();
-			
-!!!!Мониторить что востребовано в вакансиях
 
 softScills:
-общение, английский, публичные выступления, определиться чего я хочу.
+общение, английский, публичные выступления, определиться чего я хочу. !!!!Мониторить что востребовано в вакансиях
+Practice: CodeGym, Java Revisited
 
+============================================ВАЖНО=====================================================================================
 	junior должен знать: 
 Принципы ООП хорошо знать, ЯП, методы объекта Object, основные коллекшен фреймоворки и интерфейсы, понятие о многопоточности, SQL(лучше posgrest не mySQL), стек технологий hibernate, Spring core boot date jdbc, rеs(json) сервисы. !!!Алгоритмы - поверхностно, справочники - для справки???
 	Книги: 
@@ -122,11 +123,6 @@ Head First Java, EduTools IDE, тесты, смежные технологии (
   Java в примерах — Дэвид Флэнаган
  Язык программирования Java SE 8. — Джеймс Гослинг, Билл Джой
   Структура данных и алгоритмы Java — Роберт Лафоре
-
-
-  Practice: CodeGym, Java Revisited
-
-Это для проверки отображения совместимости кириллицы 
 
 Раннее связывание - мы знаем или передаём известное значение Shape a = new Circle(20)
 Позднее - мы узнаем после компиляции int res = circle.square();

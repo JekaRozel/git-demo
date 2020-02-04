@@ -1,13 +1,34 @@
 ls | grep  здесь grep искать по имени(или букве)
-gedit текстовый файд
+gedit текстовый файл
 :q - выход
 ctrl+z выйти с возможностью вернуться
 fg вернуться
 ctrl+c полностью выйти
-htop информация о процессоре
+
 showin > file записать вывод команды отображающей что-то в файл
 showin >> file ДОписать вывод команды отображающей что-то в файл
 df сведения о файловой системе
 sudo dd if=путьК.iso of=/dev/sdb (dev/sdb- путь к флешке, проверяется df)
 ubuntu-support-status
+
+sudo !! если забыл в предыдущей команде поставить sudo
+cntr+shift+t - new tab
+cntr+shift+w - close tab
+  Программы:
+htop - информация о процессах
+ranger - Total Commander в терминале 
+mc - Total Commander в терминале
+lynx - browser в терминале
+links2 - browser в терминале
+moc - winamp в терминале
+rtorrent torrent_client в терминале
+vimtutor - песочница vim
+calcurse - консольный календарь
+caca-utils - ASCII просмотр графики
+
+  Команды:
+
+
+
+
 
