@@ -27,7 +27,8 @@ calcurse - консольный календарь
 caca-utils - ASCII просмотр графики
 
   Команды:
-
+поломал chrome командной --no-sandbox
+починил sudo chown -R $USER:$USER ~ или ($USER ~).ё
 
 
 
