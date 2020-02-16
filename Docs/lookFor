@@ -1,0 +1,66 @@
+ПОСМОТРЕТЬ БИНАРНЫЕ СДВИГИ
+ Что надо бы знать:
+tmux veget git htop zsh Docker
+разница между flatpack и snap
+google stadia
+hebernate, сервера на java (tomcat и jeti для web) (jboss и glassfish)
+Spring Core, Spring Boot, Spring NVC, Timelive, Spring Data (JDBC). Что это, для чего и как использовать. Почитать Spring in action. сайт https://mkyong.com/ 
+
+Для курса Стэпик джаваВэбСервер
+Что из этого я знаю:
+Примитивные типы, переполнение примитивных типов
+Объекты, классы, наследование , полиморфизм, инкапсуляция
+Область видимости переменой, статические переменные
+Ветвления и циклы
+Преобразования примитивных типов
+Интерфейс, реализация интерфейса
+Операторы
+Стек, куча
+private, protected, public
+Reflection(позволяет узнать какого класса Объект и внутренности)
+
+Список полезностей java с proglib.com
+    Youtube:
+ https://www.youtube.com/watch?v=T8RqyoaVZD8&list=PLNclrLF8MXOy4-HOn6_YyuDKfzGK1nTl-
+ https://www.youtube.com/watch?v=wGWZRAAvzkU
+ https://www.youtube.com/watch?v=TPJq5U2KoI8
+ https://www.youtube.com/watch?v=rrsdVOAL254&list=PLxbCrqzAmccufGafo-VlAwpJ4uU4zmtyG
+----------------
+ https://www.youtube.com/watch?v=PeuIq0Sj0wM  /what should know
+ https://www.youtube.com/watch?v=ua-aaYojPb0&list=PLlAN9g9JWTzPycUWMJRlQ1kb-hQNUL5Uh   /gui
+ https://www.youtube.com/watch?v=QLtk1jD6V4Y&list=PLoij6udfBnchZ36TWDdiQsPArx-ON-1GM  /maven
+ https://www.youtube.com/watch?v=JWNU2gnaHHA&list=PLoij6udfBncjXbiZ6pmX-chxQNjANR2Gh  /WebSockets
+ https://www.youtube.com/watch?v=HX0q3vW4nVQ&list=PLwwk4BHih4fiKbIAenL1UOdakUUsW9zf7 /Web-сервис на Java
+ https://www.youtube.com/watch?v=1qYOxJ-OEWs&list=PLi3gxGWPyGGQsEZyjQNPoUEHwNtxiMf-0  /Hibernate
+ https://www.youtube.com/user/derekbanas/featured
+ https://www.youtube.com/user/thenewboston/featured
+ https://www.youtube.com/user/vitaxafication/featured
+  https://www.youtube.com/user/KharkovITCourses
+ https://www.youtube.com/user/ytkach
+ https://www.lektorium.tv/speaker/3109
+ https://www.youtube.com/channel/UCnAdXkr17iQS8YcYl0LhPdw
+ https://www.youtube.com/channel/UCO9JvZ75Usyzgd1puurLF6A
+
+
+  Books:
+ Java. Эффективное программирование 2 edition – Дж. Блох
+ Java. Библиотека профессионала 1, 2 тома – К. Хорстманн, Г. Корнелл
+ Изучаем Java – К. Сьерра, Б. Бэйтс
+ Java 8. Руководство для начинающих – Г. Шилдт	
+ Clean code
+ Head First. Паттерны проектирования – Эрик Фримен, Элизабет Робсон
+ Алгоритмы на Java – Роберт Седжвик, Кевин Уэйн
+--- Test Driven: TDD and Acceptance TDD for Java Developers – Lasse Koskela
+ Алгоритмы на Java – Роберт Седжвик, Кевин Уэйн
+ Head First Object-Oriented Analysis and Design – Brett D. McLaughlin 
+ Java. Полное руководство – Герберт Шилдт
+ Философия Java — Брюс Эккель
+ Java Concurrency in Practice — Goetz B., Peierls T.
+ Паттерны проектирования — Эрик Фримен, Элизабет Фримен
+  Java Puzzlers — Joshua Bloch
+  Java в примерах — Дэвид Флэнаган
+ Язык программирования Java SE 8. — Джеймс Гослинг, Билл Джой
+  Структура данных и алгоритмы Java — Роберт Лафоре
+
+
+
