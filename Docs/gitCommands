@@ -29,6 +29,16 @@ git branch -d имявети - удалить ветвь (безопасно, п
 git branch -D имяветви - удалить принудительно
 git bracnh --delete имяветви  - удалить remote-ветвь 
 
+ работа с предыдущими ветками
+git log - список коммитов
+git show fe83f9 - посмотреть изменения
+git diff 0ef9fe..f39fe8 - разницa между коммитами (лучше git difftool)
+git checkout mk3l43h3 File.txt - откатываем File.txt к коммиту номер mk3l43h3
+git revert HEAD - исправление последнего 
+git revert er8f8ww - исправление коммита номер er8f8ww 
+
+при конфликтах надо исправлять вручную, затем add & commit 
+
 
 
 git gui & графический(текстовй интерфейс) /rescann(перечитать). кликать на иконку
