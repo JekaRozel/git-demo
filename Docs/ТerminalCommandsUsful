@@ -26,11 +26,16 @@ vimtutor - песочница vim
 calcurse - консольный календарь
 caca-utils - ASCII просмотр графики
 mplayer http://ip.ip.ip.ip (exit U)
+wget https://url - скачать файл
 
   Команды:
 поломал chrome командной --no-sandbox
 починил sudo chown -R $USER:$USER ~ или ($USER ~).ё
-
+mkdir -p dir{1..20} 20 папок -p создаёт родительский каталог если его нет, если надо пру папок, то через пробел
+javac -verbose -d target/classes/ src/org/HelloJava.java  "-verbose" для вывода лога компилятора и "-d" определить директорию для сгенерированных class-файлов
+javap посмотреть инструкции байткода (-с подробно) 
+tar -cvf любое_имя.tar /home/sedicomm/ (это папка каоторая архивируется) (cvzf для gzip)
+tar -xvf имя_архива.tar (если надо в другую папку добавляем) -C /home/public_html/videos/
 curl -vv 'адрес сайта'  - вся инфа о нём
 
 Ctrl + a Возвращает курсор в начало текущей строки
