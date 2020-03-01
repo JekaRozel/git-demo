@@ -37,6 +37,23 @@ javap посмотреть инструкции байткода (-с подро
 tar -cvf любое_имя.tar /home/sedicomm/ (это папка каоторая архивируется) (cvzf для gzip)
 tar -xvf имя_архива.tar (если надо в другую папку добавляем) -C /home/public_html/videos/
 curl -vv 'адрес сайта'  - вся инфа о нём
+update-alternatives --config java
+apt install -f
+apt purge (openjkd-\*) удалить весь openjdk
+ctr+R (history search)
+history выбираем команду, вводим ! номер команды
+cp file file1 копирование файла
+cp -r folder folder1 копирование папки
+mv file file1 перемещение файла
+mv -r folder folder1 перемещение папки
+rm file file1 удаление файла
+rm -r folder folder1 удаление папки
+!! вставляет предыдущую команду
+при копировании . в конце строки занчит что копируем в текущую директорию
+^чтоИсправляем^наЧтоИсправляем
+cat file вывести в терминал содержимое файла
+cat > file <<EOF создать/перезаписать file принивает ввод пока не введёшь EOF.
+./command - выполнить команду command
 
 Ctrl + a Возвращает курсор в начало текущей строки
 Ctrl + e Курсор в конец текущей строки

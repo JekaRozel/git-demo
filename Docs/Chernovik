@@ -46,6 +46,7 @@ Coyote - реализует функцию HTTP-сервера. */
 Static Binding - раннее связывание, в момент компиляции. 
 Dynamic Binding - позднее связывание, в момент выполнения программы.
  система логирования в JAVA.
+
 	Tренинг епама.
 классы и пакеты называют только в единственном числе
 пакет: зеркальное.доменноеИмя.имяПакета.названиеПроекта.пакетыПриолжения;
@@ -67,6 +68,13 @@ scanner не надо закрывать если ввод с консоли, н
 
 
 ============================================ВАЖНО=====================================================================================
+	Немчинский необходимые софтскилы.
+ Английский
+ Общение
+ Estimations - оценка времени выполнения работы(задания)\
+ быть осторожными с обещаниями
+ признавать ошибки
+
 
     Теория из видосов немчинского.
 Путаница версий java: 1; java 2 - java 2(1.4); 5(java2 (1.5)); 6(java 2 (1.6))...
@@ -125,157 +133,6 @@ stack(thread) memory, heap, permanent (размеры этих объектов 
 структура данных stack(thread) реализует правило LIFO
 frame кусочек памяти выделяемый под выполнение. В нём хранится адрес возврата в стек (return), байткод выполняемого метода, здесь же выделяется память под локальные переменные метода.
 пул литералов
-
-
-
-
-
-
-`			STEPIK JAVA COLLECTONS
-	Особенности коллекций:
--динамическая изменяемость.
--не работают с примитивами.
-Есть два коренных родительских интерфейса(оба дженерики):
-java.util.Collection<E>
-java.util.Map<K, V>
-
-List подразумевает обращение по индексу как массив
-Set хранит в случайном порядке уникалные(без повторов) элементы
-Queue FIFIO
-Stack LIFO
-Deque FIFO одновременно с LIFO 
-Map ключ - значение.
-	Иерархия интерфейсов
-Collection
--List
--Set --SortedSet
--Queue --Deque
-Map
--SortedMap
-Collection и Map не наследуют друг друга, это два независимых корневых интерфейса
-Stack не используется, вместо него рекомендуют Deque
-Основные методы коллекций List<E>, Set<E>, Queue<E> унаследованные от родителя Collection<E>
-int size()
-boolean isEmpty()
-boolean contains(Object o)
-boolean add(E e)		???
-boolean remove(Object o)
-void clear()
-
-Map - не коллекции, но часто рассматриваются как таковые
-	методы
-int size()
-boolean isEmpyt()
-boolean containsKey(Object key)
-boolean containsValue(Object value)
-V get(Object key)
-V put(K key, V value)
-V remove(Object key)
-void clear()
-Set<K> keySet()
-Collecton<V> values()
-Set<Map.Entry<K, V>> entrySet()
-
-		ТЕПЕРЬ ПОДРОБНЕЕ КАЖДУЮ. LIST
-	Методы интерфейса List<E>
-унаследованные
-int size()
-boolean isEmpty()
-boolean contains(Object o)
-boolean add(E e)		???
-boolean remove(Object o)
-void clear()
-+ новые
-E get(int index)
-void add(int index, E element)
-E remove(int index)
-E set(int index, E element)
-int indexOf(Object o)
-  
- Нельзя создать объект List, но можно создать объект его наследников: ArrayList & LinkedList. Их различия в механизме ввода элементов. Но общий родитель (унаследованные методы) позволяют использовать их одинаково.
- У ArrayList - автоматически расширяемый массив. Может быть любого (даже null) типа.
-У него есть три перегурженных метода
-ArrayList() по-умолчанию размерность 10,  A																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																											rayList(Collection<? extends E> c), ArrayList(int initialCapacity) 
- У LinkedList есть два пергруженных метода:
-LinkedList(), LinkedList(Collection<? extends E> c)
- Полезные операции.
- for (String name : ArrayList/LinkedList) {
- System.out.println(name); }
- Object[] objArray = ArrayList/LinkedList.toArray(); /преобразование list в массив объектов
- Srting[] strArray = ArrayList/LinkedList.toArray(new String[0]); /преобразование list в массив строк
- List<String> list = java.util.Arrays. asList("one", "two", "three"); преборазование массива в list
- ArrayList/LinkedList.subList(a, b);  кусок списка где: a- с какого элемента включительно, b- до какого не влючая.
-
-		Queue
-First In First Out. Доступны только две операции. Можно добавлять новые в конец очереди enqueue и удалять имеющиеся из начала очереди dequeue.
-Наследуется от Collection.
-	Методы
-boolean add(E e) вставляет элемент если возможно, возвращает тру или exception
-boolean offer(E e) просто вставляет элемент если возможно
-E remove() возвращает и удаляет элемент из головы очереди, exception если пусто
-E poll() возвращает и удаляет элемент из головы очереди, null если пусто 
-E element() возвращает но НЕ удаляет элемент из головы очереди, exception если пусто
-E peek() возвращает но НЕ удаляет элемент из головы очереди, null если пусто 
-
-		Stack
-Last In First Out.  Доступны только две операции. Добавить элемент в конец очереди push и удалить элемент из конца же pop
-Но его не рекомендую использовать. Предпочтение следует отдавать двусвязному Deque
-	Методы
-.push(E e) добавляет 
-.pop() удаляет
-		Deque
-java.util.Deque<E> extends (расширяет) java.util.Queue<E>. По сути это двусвязный список и он позволяет как FIFO так и LIFO (работать с обоими краями очереди). Есть два варианта реализации этого интерфейса ArrayDeque и LinkedList. Следовательно эти два класса могут применятся как Queue (FIFO), Stack (LIFO), and Deque (Double-Ended Queue)
-	Методы
- Работа с началом очереди
-addFirst(e) добавить если не может то бросает exception
-offersFirst(e) добавить если не может то возвращает какое-то значение
-removeFirst() удалить если не может то бросает exception 
-pollFirst() удалить если не может то возвращает какое-то значение
-getFirst() посмотреть элемент если не может то бросает exception 
-peedFirst() посмотреть если не может то возвращает какое-то значение
- 
- Работа с концом очереди
-addLast(e)  добавить если не может то бросает exception
-offerLast(e) добавить если не может то возвращает какое-то значение
-removeLast() удалить если не может то бросает exception
-pollLast() удалить если не может то возвращает какое-то значение
-getLast() посмотреть элемент если не может то бросает exception
-peekLast() посмотреть если не может то возвращает какое-то значение
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
