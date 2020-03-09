@@ -317,8 +317,18 @@ hashCode переопределяют с целю получения макси�
 Если hashCod-ы равны это не значит что equals() тоже равны, но
 если equals() равын то и hashCode тже равны 
 
+ 	Collections
+Интерфейс Collection
+Collection col = new ArrayList(); 
+ Mетоды
+ .add();
+ .remove();
+ Iterator i = col.iterator();
+ while (i.hasNext()){ sout(i.next()); 
 
 
+
+Класс Collections Класс Arrays 
 
 
 
