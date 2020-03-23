@@ -68,11 +68,11 @@
  блок finally можно использовать без блака try
 -да
 +НЕТ
+ возможно ли в Java использование выражений вида a<x<b
+-да
++нет
 
  обязательно ли классу реализовывать интерфейс Comparable чтобы его можно было использовать в TreeSet
--да
-+
- возможно ли в Java использование выражений вида a<x<b
 -да
 +
  не абстрактный метод должен содержать как минимум
@@ -160,6 +160,7 @@
 +
  Через какие классы можно перехватить ArrayIndexOutOfBoundException?
 -ArrayIndexOutOfBoundException, IOException, Exception 
+-ArrayIndexOutOfBoundException
 +
  Какой из предложенны блоков кода может запустить новый поток
 -Thread t = new Thread(Task);t.start();
@@ -202,5 +203,8 @@
 +
  При выполнении следующего кода будет сгенерировано исключение
 -ArrayIndexOutOfBoundsException и ArithmeticException
++
+ ключевое слово для генерирования и выброса исключения
+-throws
 +
  
