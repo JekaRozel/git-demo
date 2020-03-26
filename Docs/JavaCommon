@@ -1267,7 +1267,7 @@ public int compare(OurClass o1, OurClass o2){ return o1.поле - o2.поле} 
  И теперь этого посредника надо представить Sety:
 CompareOurClass coc = new CompareOurClass();
 Set s = new TreeSet(coc); // можно короче Set s = new TreeSet(new CompareOurClass());
-	xx
+	
 	Списки List
 Хранят информацию о добалвленных элементах в виде индексов.
 Vector - synchronized ArrayList;
@@ -1285,7 +1285,11 @@ LinkedList - упорядоченная очередь(как ввели)
 PriorityQueue - отсортированная очередь.(сортировка происходит сразу при добавлении элемента).
 
 	Map<K, V>
- Есть 4 типа HashMap()(неупорядоченый); HashTable(); LinkedHashMap(); TreeMap(); 
+Есть 4 типа 
+HashMap()(неупорядоченый)(у разных объектов может быть одинаковый хэшкод); 
+HashTable() тоже неупорядоченный synchronised HashMap();
+LinkedHashMap() ordered(упорядоченный) HashMap(), двусвязный список; 
+TreeMap() отсортированный по принципу red-black tree; 
  пример:
 Map map = new HahsMap();
 map.put("1", "one");
@@ -1296,13 +1300,29 @@ sout(map.get("2")); // вернёт two
 значение по умолчанию 16 (т.е. побитовый сдвиг 1 << 4 )
 максимальное значение ~2^30 (1 << 30);
 
+	Set не хранит повторяющиеся значения
+3 типа
+HashSet(); неупорядочен, в основе просто Мар
+LinkedHashSet(); упорядочен, в основе LinkedHashMap
+TreeSet(); отсортирован, в основе TreeMap
+основные методы size isEmpty add remove 
 
 
-
-
-
-
-
+	Gentric <обобщённые типы> параметризованные или типизированные  
+ Описание Generic класса:
+ pulic class Main <T> 
+ Описание Generic метода:
+ <T> T method(T type){ return type; } <T>тип метода, T = void, T Type - тип принимаемого значения
+ Описание Generic переменной
+ Т var;
+  Generic типов ожет быть несколько через запятую <T, U, D>
+может наследоваться и имплементиться. <T extends SomeClass & SomeInterface & OtherInterface>
+ Как недостаток - у Generic типов мало методов, соответственно их используют для хранения данных в коллекциях
+Не может быть static
+НЕльзя создавать массивы
+ В коллекциях можно 
+<T extends Class> по нему можно пройти, добавить нельзя
+<T super Class> можно пробегаться и добавлять наследников
 
 
 
