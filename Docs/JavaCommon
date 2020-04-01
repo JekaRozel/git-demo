@@ -1332,11 +1332,87 @@ TreeSet(); отсортирован, в основе TreeMap
 	Анонимные классы.
  Переопределение меода прямо по ходу объявления объекта.
 
+	Клонирование.
+Class object1 = object; кладём object в новую ссылку object1
+Class object2 = object.clone(); создаём новый object2 - копию object. //только обязательно: Class должен implement Clonable.
+Это поверхностное клонирование. Глубокое клонирование - кода отдельно клонируются все внутренние объекты.
+
+	Рефлексия.
+ Возможность у любого объекта получить экзепляр Class объекта class. С его помощью получаем доступ к конструктрам, методам и полям.(даже приватным через .setAccessible(true) .setНужныйТип(кому, какой);
+.getMethods - досту к методам .getDeclaretMethods - доступ ко всем методам (с любым модификатором доступа). можно передать значение в метод method.invoke(куда, что);
+Основные выводы: .getName(); .getType().getName(); .getReturnType();
+ Пример.  Так можно получать доступ к  конструкторам, полям и методам. 
+SomeClass sc = new SomeClass();
+	Class clss = sc.getClass();
+	Class clss1 = SomeClass.class;
+	Constructor[] constr = clss.getDeclaredConstructors();
+	for(Constructor constrs :constr ) {
+		System.out.println(constrs.getName());
+		Parameter[] param = constrs.getParameters();
+		for (Parameter para : param) {
+			System.out.println(para.getName());
+			System.out.println(para.getType().getName());
+		}
+
+Для методов и полей можно ещё вызвать список модификаторов:
+ Modifier.toString(method.getModifiers());
+
+	Что следует знать
+java swing не надо, android возможно, web надо
+ java 8 лямбда
+git maven JUnit Hibernate Spring SQL jpql HTML CSS javascript(w3schools.com учебник) jquery
+	Что надо знать перед собеседованием.
+ООП, полиморфизм, разница между интерфейсом и абстракт классом, сборщик мусора, ИСКЛЮЧЕНИЯ, стрингбилдер/стрингбуфер, сериализация, КОЛЛЕКЦИИ ЭКВАЛС ХЭШКОД, МНОГОПОТОЧНОСТЬ, ГИБЕРНЕЙТ, СПРИНГ(БИНЫ), скюль, html/css, english.
+
+	компиляция в консоли
+javac -d to -cp CPfrom where.java //с classpas чё-то намудрили
+java -cp NOWto  where.class 
+jar -cf Myjar.jar what
+java -cp NOWto:Myjar.jar where.class
+jarфайл можно скопировать/переместить в папку джавы ../jre/lib/ext. тогда не надо указывать :Myjar.jar
+jar -tf Myjar.jar - содержимое
+ 
+	чтение из консоли
+Для этого есть специальныe классы: 
+Console console = System.console(); String s = ""; s = console.readLine(); - terminal
+читаем ввод из консоли.
+Scanner scanner = new Scanner(System.in); Stirng s = ""; s = scanner.nextLine(); - output console.
+
+	Многопоточность
+  Создание потоков.
+Для создания необходимо переопределить метод Run. Есть 2 варианта:
+1) class MyThread extends Thread { @Override public void run(){ sout("bla");}}
+.создание объекта: MyThread a = new MyThread();
+.запуск(создание) потока: a.start();
+2) class MyRunnable implements Runnable { @Override public void run(){sout("bla-bla");}} 
+.создание объекта: MyRunnable a1 = new MyRunnable(); 
+.запуск(создание) потока: Thread thread1 = new Thread(a1); thread1.start();
+ .run() - вызов метода.
+ .start() - вызов метода в новом потоке (создаёт поток и помещает в pool(бассейн)).
+ Если вызвать оба этих метода то они запустятся в произвольном порядке.
+ меthod.start() нельзя вызвать повторно. Для создания нескольких потоков надо создать несколько объектов Thread и вызвать у каждого .start()
+ сокращённый вызов:
+ new MyThread().start();
+//у нового потога есть свой стек вызовов, который начинается с метода run();
+ Методы потока:
+Thread.start();
+Thread.sleep(1000);(статический) вызывает interruptedException.
+Thread.interrupt();
+Thread.yield();(статический) возвраащет потоко из 3 в 2 и пытается запустить что-либо другое. "погодь, запусти другой"
+Thread.join();(не статический) - прекращает свое выполнение пока не завершится какой-то другой.
+ статический - можно запустить только на текущем потоке
+ не статический - на объекте.
+Состояния потока
+1 new
+2 runnable (в пуле, на очереди, но ещё не выполняется)
+  не стабильно между 2 и 3.преходят туда-обратнo, переодически(но не обязательно) попадая в wating/blocking/sleepin состояния (выходя из данных состояний поток попадает в 2)	
+3 running (выполняется)
+4 dead
 
 
 
 
-
+sout(Thread.currentThread().getName()); - выводит имя потока в котором вызван
 
 
 
