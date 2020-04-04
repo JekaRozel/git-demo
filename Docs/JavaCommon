@@ -1419,7 +1419,49 @@ Thread.join();(не статический) - прекращает свое вы
 
  Deadlock (зависание)
 происходит когда 2 ресурса ссылаются друг на друга и соответственно мешают друг другу. ( если 1 вызывает 2 а 2 вызывает 1 то всё виснет, потому что нельзя вызвать 1 пока не закончится выполнение предыдущего 1)
- Notify (уведомить) чтобы постоянно не проводить проверку на нужность поток переходит в waite и ожидает notify
+ Notify (уведомить) чтобы постоянно не проводить проверку на нужность поток переходит в wait и ожидает notify от другого (выполняемого) потока. Пока wait выполняется - он освобождает lock
+	ReentrantLock
+ Гибкий локальный вариант synchronized.
+Lock a = new ReentrantLock(); в каоком либо методе начинаем непрерывный поток a.lock();, в другом заканчиваем a.unlock();. И в этот промежуток никакой другой не может вклиниться. a.tryLock() возможность для другого потока проверять занятость ресурса и при освобождении сразу начать выполнение.(антипод notify). А вот аналог wait/notify при работе с Lock-ами. 
+Lock a = new ReentrantLock();
+Condition c = a.newCondition();
+a.lock(); c.await(); a.unlock();
+a.lock(); c.signal; a.unlock();
+Поток ожиадет сигнала и ничего не делает c.await();, а этот поток сигнализирует что пора работать c.signal();
+ Callable<T> b = new MyCallab();
+ FutureTask f = new FutureTask(b);
+ new Thread(f).start();
+ sout(f.get());
+static class MyCallab implements Callable<T> {
+ public T call() thorws Exception { ... ; return ...}
+т.е. можно запустить какой-то код в методе call() в отдельном потоке и получить из него результат.
+    Executor.
+Создание пула потоков, новый запуск активирует уже существующий поток, а не создаёт новый
+  Executors.newFixedThreadPool(кол-во); .newSingleThreadExecutor(); - один ппоток .newCachedThreadPool(); - создаёт потоки по мере необходимости.(60 с. простоя и поток умирает, либо переиспользуется по необходимости) 
+ExecutorService ex = Executors.newFixedThreadPool(2);
+ex.submit(new MyThread());
+ex.submit(new MyThread());
+ex.shutdown();
+ замена таймеру. ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
+s.schedule(new MyThread(), 3, TimeUnit.SECONDS);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
