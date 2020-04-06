@@ -1444,14 +1444,44 @@ ex.submit(new MyThread());
 ex.shutdown();
  замена таймеру. ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
 s.schedule(new MyThread(), 3, TimeUnit.SECONDS);
-
-
-
-
-
-
-
-
+	Semaphore.
+Semaphore sm = new Semaphore(n); n-кол-во одновременно работающих потоков.
+sm.acquire(); start
+sm.release(); finish, next can start
+	CountDownLatch
+CountDownLatch cdl = new CountDownLathc(n); n-сколько раз должен вызваться данный метод
+cdl.countDown(); //n-1
+cdl.await();  когда n доходит до 0, ресурс освобождается, cdl переходит в режим ожидания
+ Удобно для выполненя какого-либо конкретного числа потоков.
+ 	Exchanger обмен потоками.
+Exchanger<T> ex = new Exchanger<>();
+class A extends Thread { Exchanger<T> ex; 
+A(Exchanger<T> ex) {this.ex = ex; start();} //constructor
+method1{ ex.exchange(T); ex.exchange(T); }}
+class B extends Thread { Exchanger<T> ex;
+B(Exchanger<T> ex) {this.ex = ex; start();} //constructor
+method2{ sout(ex.exchange(null));}}
+new A(Exchanger);
+new B(Exchanger);
+ потоки обмениваются информацией, в данном примере из А передаётся в В и выводится, В ничего не передаёт. Но они могут и обмениваться и двусторонне.
+ 	CyclicBarier
+ CyclicBarier cb = new CyclicBarier(n, new Class());
+class N () {CyclicBarier cb;
+method N (CyclicBarier cb) { this.cb = cb; start():} // constructor
+run () { cb.await();}} 
+ new N(cb); когда этих объектов будет создано n, тогда запуститься new Class(). //первая строка
+	Phaser
+Phaser p = new Phaser(n);
+... p.arriveAndAwaitAdvance(); пока n потоков не завершиться, 	новая фаза не начинается (методы, потоки);
+//как альтернатива: p.register(); p.arriveAndDeregister(); создавать и удалять по мере появления, а не задавать статичное число n 
+	BlockingQueue
+Queue<T> q = new PriorityQueue();
+... q.remove(); .start();
+... q.add(T); .start();
+нужен чтобы не нарушалась последовательность выполнения потоков (сначала надо add только затем remove.
+... q.take(); .start();
+... q.add(T); .start();
+take будет ожидать пока не произойдёт add
 
 
 
