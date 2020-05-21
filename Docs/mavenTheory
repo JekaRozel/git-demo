@@ -59,10 +59,70 @@ compile provided runtime test import (по умолчанию compile/(import)).
 B Project -> new module -> artefactId с маленькой буквы -> modulе name с большой;
 
 
-
-
 для винды shift+f10 открыть папку в консоли 
 
+		Maven Ant Gradle
+	Ant - built.xml
+ ant (компиялция и запуск по-умолчанию), ant clear, ant test, atn compile, ant package. запуск уже упакованного java -jar build/HelloWorld.jar
+	Maven - pom.xml
+ mvnrepository.com;
+ mvn compile, mvn exec:java, mvn test, mvn clean, mvn package запуск уже упакованного java -jar target/hello-maven-0.1.jar(путь к собранному .jar файлу)
+ по-умолчанию: mvn archetype:generate
+ 	Gradle - built.gradle
+ язык сценария groovy  вместо xml в maven & ant 
+ apply plugin: 'java', apply plugin: 'application' необходимый минимум в файле built.gradle
+ gradle compileJava, gradle run, gradle test, gradle clean, gradle build. запуск уже упакованного java -jar build/libs/hello-0.1.jar
+		Теперь подробнее.
+ Конвенции: описание артефактов
+ минимальный набор зависимостей:	
+ <dependency>
+  <groupId> сайт производителя </groupId>
+  <artifactId> имя модели </artifactId>
+  <version> номер версии </version>
+ </dependency>
+ Версии. Выпуск новой версии - release
+ нумерация: 5.7.9.  где:
+ 5 - МАЖОРНАЯ версия, когда сделаны обратно несовместимые изменения API
+ 7 - МИНОРНАЯ версия, добаляется новая функциональность, не нарушая обратной совместимости.
+ 9 - ПАТЧ-версия, когда вносятся обратно совместимые доработки.
+ RELEASE & SNAPSHOT
+ RELEASE - версия которую опубликовали
+ SNAPSHOT - может перезаписываться без изменения нумерации, версия над которой работаю перед релизом. release-кандидат.
+ Транзитивные зависимости - зависимости зависимостей.
+ Фундаментальная проблема: Dependency hell - транзитивные зависимости (разными "элементами") от разных версий одной и той же библиотеки. Обе версии загрузить нельзя, т.к. java загрузит первую попавшуюся и только одну. 
+ Хорошая практика разбивать большой проект на небольшие изолированные модули(<modules></modules>).
+ в зависимостях <dependencies> указывается scope
+ <scope>compile</scope>
+ <scope>runtime</scope> - библиотека будет добавлена на при финальном релизе на прод.
+ <scope>test</scope> - нужна для тестов, не добавляется в прод
+   <packaging>war</packaging> - этот артефакт нужен для запуска нашей поставки на interprice-сервере. Конкретно этот артефакт - не библиотека, а приложение. Все наши компоненты схлопываются в этот war, а он уже идёт на продакшен.
+   Вопрос для джунов: чем отличаются секции <dependencies> и <dependencyManagement>?
+ В <dependencyManagement> указываются те версии зависимостей которые необходимо использовать при сборке проекта, не взирая на другие версии.
+ Если в <dependencyManagement> указан номер версии то в <dependencies> номер указывать уже не надо.
+  <excusions><exclusion> Зависимость которую не хотим использовать </excusions></exclusion>
+  meta-информация в maven поставка артефакта состоит из самой библиотеки jar или war файл с набором классов. И Pom-файла с описанием артефакта и списком версий его зависимостей. Артефакты загружаются в бинарный репозиторий( сетевое хранилище, каталог артефактов).
+  Maven сохраняет заргуженные артефакты на локоальный диск в папку .m2. Адреса репозиториев и пароли к ним хранятся в файле maven/settings.xml
+  команды:
+   clean - очищает папку target с результатами предыдущих сборок.
+   compile - компилирует классы. Превращает файлы .java в файлы .class в папку target.
+   package - упаковывает все .class-файлы в jar/war фартефакты. 
+   install - сохраняет этот артефакте в локальную папку .m2 
+   deploy - публикует артефакт в удалённый бинарный репозиторий команды/компании. (не глобальное, типа размещение на сервере).
+   Использовать maven-release-plugin. release:prepear, release:performe. Рекомендуется погуглить популярные плагины Maven, могут спросить на собеседовании.
+    
+   Maven - Gradle.
+   package - build
+   .m2 - build cache
+   settings.xml - init.gradle
+   pom.xml - build.gradle
+   <modules> - settings.gradle
+   -T 1.5C - --parallel (параллельная сборка на нескольких ядрах)
+   <dependencyManagement> - dependecies.constraints
+ При наличии разных версий одной зависимости используется более высокая(свежая).
+ Раньше dependency Managementа небыла, использовали spring-dependency-management-plugin и nebula-dm-plugin (не рекомендуются, конфликтуют с нижеследующим). С 5-ой версии Gradle появились platform () и constraints, они предпочтительны. 
+ в dependencies ключевое слово platform (чё-то) загружает все зависимости которые нужны для "чё-то".
+ Только enforcedPlatform(чё-то) заставляет Gradle использовать более старую версию зависимости, во всех других случаях он выбирает свежую.
+ В случае когда название библиотеки изменило не только номер, но имя полностью, чтобы Gradle это узнал надо использовать replacedBy("это", "вотЭто").
 
 
 
