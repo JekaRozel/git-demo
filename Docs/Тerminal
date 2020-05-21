@@ -88,3 +88,6 @@ Tab Автодополнение команд и имен файлов
 Tab Tab Показать доступные варианты автодополнения
 
 sudo -i root
+sudo atp install -f
+sudo dpkg -i package.deb
+cat /etc/*-release - версия ядра
