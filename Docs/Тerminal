@@ -90,4 +90,4 @@ Tab Tab Показать доступные варианты автодопол�
 sudo -i root
 sudo atp install -f
 sudo dpkg -i package.deb
-cat /etc/*-release - версия ядра
+cat /etc/*-release - версия ядра (or: lsb_release -a)
