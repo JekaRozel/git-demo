@@ -1,6 +1,19 @@
 Sзагрузить можн git-scm.com/downloads
+---
+…or create a new repository on the command line
+echo "# Repo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:JekaRozel/Repo.git
+git push -u origin master
+-
+…or push an existing repository from the command line
+git remote add origin git@github.com:JekaRozel/Repo.git
+git push -u origin master
+---
 git clone "ключ с гита" загрузить с гитхаба
-ssh-keygen -t rsa -b 4096 -C "comments" можно и без -b 4096
+ssh-keygen -t rsa -b 4096 -C "commentsMayUseEmail" можно и без -b 4096
 git config --global user.name "name"
 git config --global user.email "email"
 git config --list --show-origin 
