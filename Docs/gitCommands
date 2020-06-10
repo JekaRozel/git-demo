@@ -62,7 +62,7 @@ git revert er8f8ww - исправление коммита номер er8f8ww
 в файле .gitignore перечисляем те файлы которые нам не надо коммитить, а сам файл .gitignore добовляем (add-commit-push).
 
 git remote add origin https://github.com/jekarozel/git-demo.git (url писал из головы, что-то похожее) push в пустой репозиторий.
-
+git push --set-upstream origin ub - прописать родителя origin ветке ub.
 git gui & графический(текстовй интерфейс) /rescann(перечитать). кликать на иконку
 gitk графическое отображение (для ветвения)
 
