@@ -99,4 +99,15 @@ gitk графическое отображение (для ветвения)
  git branch --all
  tag - маркер для пометки коммитов. Это не комментарий, это метка, к ней можно обращаться/переключаться. можно git push --tags запушить тэги а не коммиты, git tag tagname; git tag --list; git checkout tagname.
  stash - возможность сохранить текущую работу во временное хранилище.
-
+ git stash save "description" сохранить работу
+ git stash list список
+ git stash pop (and remove from stash) извлечь с удалением из стеша
+ git stash apply (leave in stash) извлечь не удаляя из стеша
+ git stash drop (clear).
+remote
+ add:
+  git remote add <name> <url>
+  git remote add origin git@github.com:user/repo.git
+  view:
+   git remote -v
+   git remote show <name>
