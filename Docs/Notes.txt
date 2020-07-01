@@ -1,0 +1,20 @@
+
+    commit
+    branch
+    checkout
+    cherry-pick
+    reset
+    revert
+    rebase
+    merge
+show commands
+
+Отделение (detaching) HEAD означает лишь присвоение его не ветке, а конкретному коммиту (по простому чекаут через хэш)
+ идентификатора - hash
+ Можно напрямую прикрепить ветку к коммиту при помощи опции -f. Например, команда: git branch -f master HEAD~3
+reset HEAD~1 - local; revert HEAD - remote commands
+
+git cherry-pick <Commit1> <Commit2> <...> - 
+способ сказать, что ты хочешь копировать несколько коммитов на место, где сейчас находишься (HEAD)
+
+rebase -i перетасовка коммитов
