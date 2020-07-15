@@ -1,3 +1,4 @@
+
  most popular: commit, branch, checkout, cherry-pick, reset, revert, rebase, merge
  Слияние: merge "имя ветки КОТОРУЮ мержим", rebase имя ветки КУДА ребэйзим"
 HEAD всегда указывает на последний коммит (простой checkout C4 преносит его туда)
@@ -7,7 +8,7 @@ checkout C4^ значит переключится на первого роди�
  Теперь команды отмены изменений: reset HEAD~1 - local; revert HEAD^ - remote commands
  Команды внесения изменений
 git cherry-pick <Commit1> <Commit2> <...> - копировать несколько коммитов на место, где сейчас находишься (HEAD), хорош когда знаешь точные идентификаторы коммитов.
-rebase -i КУДА КАКОЙ - перетасовка коммитов через отдельное меню
+rebase -i КУДА КАКОЙ - перетасовка коммитов через отдельное меню 
 
 
 	/\/\/\/\/\/\/\
@@ -33,3 +34,8 @@ iteno
            /\/\/\/\/\/\/\/\/\/\
 	JetBrains Java
 Since Java 11, you can write var
+
+
+
+ Это список сайтов указанных на Андерсоне:
+Codecademy, Udacity, Code School, Treehouse, FreeCodeCamp, Udemy, Coursera, Codewars, Codingame, Khan Academy, edX, W3Schools, Hackr.io, Bento.io, Solo Learn, Codeasy.net, Edabit, GITHUB, Sitepoint, Crunchzilla, One Month, LearnCode. Academy, Thenewboston, Derek Banas, Programming Knowledge, Softwarehow, Marksheet, Shay Howe, NodeSchool, Learn JS, JavaScript.com, LeetCode, Skillbox, Нетология, Geekbrains, SkillFactory, HTML Academy, Hexlet, JavaRush и другие.
