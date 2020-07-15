@@ -1,20 +1,35 @@
+ most popular: commit, branch, checkout, cherry-pick, reset, revert, rebase, merge
+ Слияние: merge "имя ветки КОТОРУЮ мержим", rebase имя ветки КУДА ребэйзим"
+HEAD всегда указывает на последний коммит (простой checkout C4 преносит его туда)
+Отделение (detaching) HEAD означает лишь присвоение его не ветке, а конкретному коммиту  (просто checkout C4; где С4 это идентификатор/hash)
+checkout C4^ значит переключится на первого родителя(ближайшего) ^^ на второго и т.д. (если ^ надо много использут тильду ~ c числом.)
+Можно напрямую прикрепить ветку к коммиту при помощи опции -f (forced) Например, команда: git branch -f master HEAD~3
+ Теперь команды отмены изменений: reset HEAD~1 - local; revert HEAD^ - remote commands
+ Команды внесения изменений
+git cherry-pick <Commit1> <Commit2> <...> - копировать несколько коммитов на место, где сейчас находишься (HEAD), хорош когда знаешь точные идентификаторы коммитов.
+rebase -i КУДА КАКОЙ - перетасовка коммитов через отдельное меню
 
-    commit
-    branch
-    checkout
-    cherry-pick
-    reset
-    revert
-    rebase
-    merge
-show commands
 
-Отделение (detaching) HEAD означает лишь присвоение его не ветке, а конкретному коммиту (по простому чекаут через хэш)
- идентификатора - hash
- Можно напрямую прикрепить ветку к коммиту при помощи опции -f. Например, команда: git branch -f master HEAD~3
-reset HEAD~1 - local; revert HEAD - remote commands
-
-git cherry-pick <Commit1> <Commit2> <...> - 
-способ сказать, что ты хочешь копировать несколько коммитов на место, где сейчас находишься (HEAD)
-
-rebase -i перетасовка коммитов
+	/\/\/\/\/\/\/\
+	     Jenkins
+jekaroze 1q2w3e4r5t6y7
+jenkins  это служба windows. win+r sirvices.msc
+при установке оставили 
+dasborad view
+workspace Cleanup
+junit
+pipeline
+build pipeline
+piarameterized trigger
+copy artifact
+git
+matrix project
+ssh slaves
+windows slaves
+mailer
+iteno
+Основные триггеры: on-demand по клику, other job finished по завершении другой задачи, Cron schedule расписание cron, SCM check это git
+ CRON выражения * любой, /5 который делится нацело на 5, можно указывать через запятую или дефис
+           /\/\/\/\/\/\/\/\/\/\
+	JetBrains Java
+Since Java 11, you can write var
