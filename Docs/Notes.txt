@@ -283,6 +283,22 @@ Since Java 11, you can write var
   
  
 
+man signal > man_signal создание файла и запись вывода команды в него
+man signal 1> man_signal 2> man_signal_error_log  где 1>stdout 2>stderr
+man signal > man_signal 2>&1 stdout&stderr
+w - Данная команда показывает, кто залогинен в системе.
+ls -tr  сортировка от старых к новым
+переместить или переименовать mv
+less - аналог cat только постраничный
+ps - список процессов
+fg - запуск приостановленного процесса
+ps aux | head -6  6 первых из списка запущенных процессов
+ps axjf дерево запущенных процессов
+kill по-умолчпнию посылает SIGTERM
+kill -9 name  убиваетSIGKILL наверняка, можно потерять несохранённые данные 
+
+mount -t ntfs /dev/sdb1 /mnt/ntfs  D как монтировать диск для чтения и записи
+
 
 
 
