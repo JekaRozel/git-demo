@@ -93,3 +93,17 @@ sudo -i root
 sudo atp install -f
 sudo dpkg -i package.deb
 cat /etc/*-release - версия ядра (or: lsb_release -a)
+
+ wifi
+# /bin/bash 
+ifconfig -a
+ifconfig WLAN0 up
+iwlist WLAN0 scan
+iwconfig WLAN0 essid LESHA7 key s:PASSWORD
+sleep 10
+dhclient WLAN0
+Сохраняем этот файл под каким-либо именем (например, wireless_up) и делаем его исполняемым командой:
+# chmod u+x wireless_up
+Переносим wireless_up по пути /usr/local/bin, чтобы сделать его глобально видимым всей системой. Теперь вам достаточно набрать в командной строке:
+# wireless_up
+
