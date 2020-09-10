@@ -8,3 +8,6 @@ ctr+b " - "_" dividing; arrows -moving; together - change size
 ctr+b de - detouch 
 tmux ctr+b & kill window
 tmux ctr+b x kill pane
+
+Ctl+b[ move arrows q
+
