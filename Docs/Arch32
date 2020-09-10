@@ -1,0 +1,83 @@
+ Setup Arch
+ Ставим английский, поэтому  В файле /etc/locale.gen раскоментируем строку #en_US.UTF-8 UTF-8
+Обновим текущую локаль системы:
+locale-gen
+Чтобы проверить соединение, попробуйте, работает ли ping -c 5 archlinux.org
+Включите синхронизацию времени через интернет: timedatectl set-ntp true
+ доступные часовые зоны для Европы: timedatectl list-timezones | grep Europe
+Установите ваш часовой пояс: timedatectl set-timezone Europe/Minsk
+Проверяем timedatectl status
+Создаем разделы на диске через fdisk:
+sgdisk --zap-all /dev/sdX - далить MBR или GPT таблицы
+partprobe
+fdisk /dev/sdX
+ o enter
+ 
+    (1) 512Mb под /boot; (dev/sdX1)
+    (2) SWAP под файл подкачки; (dev/sdX2)
+    (3) FREE_SPACE под корень; (dev/sdX3)
+
+Форматируем /boot раздел в FAT32:
+Также мы будем использовать для удобства метки. mkfs.vfat -F32 /dev/sdX1
+Для раздела подкачки (swap): mkswap /dev/sdX2 -L swap 
+Форматируем корень в ext4: mkfs.ext4 /dev/sdX3 -L root
+
+Смонтируем корневой раздел: mount /dev/sda3 /mnt
+Создадим каталог для монтирования boot раздела:  mkdir /mnt/boot
+Смонтируем загрузочный раздел: mount /dev/sda1 /mnt/boot
+Подключим swa swapon /dev/sda2
+Установка пакетов
+
+Установим базовые пакеты системы.
+pacstrap -i /mnt base base-devel grub linux linux-headers nano dhcpcd 
+
+Первичная настройка системы
+Сгенерируем fstab, для этого используем следующую команду: genfstab -p /mnt >> /mnt/etc/fstab
+Перейдём в установленную систему: arch-chroot /mnt /bin/bash (либо arch-chroot /mnt) 
+либо можно отдавать команды в систему из текущего положения arch-chroot /mnt pacman -S grub
+
+Создадим загрузочный RAM диск mkinitcpio -p linux
+Установим загрузчик (для BIOS) grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+Зададим хостнейм echo MYHOSTNAME > /etc/hostname (либо hostnamectl set-hostname myhostname)
+Изменим пароль root passwd
+Добавим нового пользователя useradd -m -g users -G audio,games,lp,optical,power,scanner,storage,video,wheel -s /bin/bash MYUSERNAME 
+passwd MYUSERNAME
+exit
+umount -R /mnt
+перезагрузка.
+Будучи в системе под root:
+pacman-key --init
+pacman-key --populate archlinux32
+pacman -S sudo
+visudo либо в файле /etc/sudeoers раскомментируем «# %wheel ALL=(ALL) ALL» 
+Отключаем IPv6
+Для этого создадим новый файл /etc/sysctl.d/10-ipv6.conf с содержимым:
+net.ipv6.conf.all.disable_ipv6 = 1
+Настройка сети Для проводной сети
+systemctl enable dhcpcd
+systemctl start dhcpcd
+Обновим базы данных пакетов: pacman -Syy
+Обновим все пакеты: pacman -Su 
+
+Теперь можно зайти в пользователя.
+ 
+В файле /etc/locale.gen раскомментируем строку #en_US.UTF-8 UTF-8 
+locale-gen
+Настроим часовой пояс: ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+Выполним hwclock, чтобы сгенерировать файл /etc/adjtime, в котором хранятся соответсвующие настройки. hwclock --systohc --utc
+
+Графическое окружение
+Установим X:
+sudo pacman -S xorg-server xorg-xinit xorg-apps mesa-libgl xterm (тачпад или тачскрин, то установите xf86-input-synaptics)
+
+установка и настройка графического окружения Xfce с менеджером входа SDDM: 
+sudo pacman -S xfce4 xfce4-goodies sddm
+Добавим sddm в демоны: sudo systemctl enable sddm.service
+ Важно sudo systemctl reboot
+ Печаль sddm не грузят. Пробуем другие
+ 
+теперь можно и шрифты:
+sudo pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-bitstream-vera ttf-arphic-ukai ttf-arphic-uming ttf-hanazono
+
+
