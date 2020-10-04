@@ -100,11 +100,20 @@ ps axjf дерево запущенных процессов
 kill по-умолчпнию посылает SIGTERM
 kill -9 name  убиваетSIGKILL наверняка, можно потерять несохранённые данные 
 
-mount -t ntfs /dev/sdb1 /mnt/ntfs  D как монтировать диск для чтения и записи
+mount -t ntfs /dev/sdb1 /mnt/ntfs  D как монтировать диск для чтения иs записи
   
 Useful methods of strings
 
+ String is: 
+    immutable type: it's impossible to change a character in a string;
+    it has methods for getting individual characters and extracting substrings;
+    individual characters can be accessed by indexes, the first character has the index 0, the last one – the length of the string – 1;
+    non-primitive type.
+
 The standard library of Java provides a lot of useful methods for processing strings:
+
+    length() returns the number of characters in the string;
+    charAt(int index) returns a character by its index;
 
     isEmpty() returns true if the string is empty, otherwise – false;
     toUpperCase() returns a new string in uppercase;
