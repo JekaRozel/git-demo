@@ -125,7 +125,26 @@ The standard library of Java provides a lot of useful methods for processing str
     replace(old, new) returns a new string obtained by replacing all occurrences of old with new that can be chars or strings.
     trim() returns a copy of the string obtained by omitting the leading and trailing whitespace. Note that whitespace includes not only space character, but mostly everything that looks empty: tab, carriage return, newline character, etc.
 
+it throws
+ NullPointerException If a string is null
+ StringIndexOutOfBoundsException If you try to access a non-existing character by an index.
+ 
+comparing strings
+ s1.equals(s2)
+ s2.equalsIgnoreCase(s1)
 
+boolean 
+ In Java, 0 is not the same as false.
+ ^ XOR (exclusive OR) is a binary operator that returns true if boolean operands have different values, otherwise, it is false.
+ Precedence: ! (NOT), ^ (XOR), && (AND), || (OR).
+ In the boolean logic (not Java!), Peirce's arrow (also known as NOR) is a logical operator that produces a result that is the negation of logical or. This operator returns true, only if both arguments are false, otherwise, it returns false. But Java doesn't have this operator as built-in.
 
+boolean b4 = true && true;   // true, all else cases false 
+boolean b1 = false || false; // false, all else cases true
+ 
+ 
+ 
+ 
+ 
  Это список сайтов указанных на Андерсоне:
 Codecademy, Udacity, Code School, Treehouse, FreeCodeCamp, Udemy, Coursera, Codewars, Codingame, Khan Academy, edX, W3Schools, Hackr.io, Bento.io, Solo Learn, Codeasy.net, Edabit, GITHUB, Sitepoint, Crunchzilla, One Month, LearnCode. Academy, Thenewboston, Derek Banas, Programming Knowledge, Softwarehow, Marksheet, Shay Howe, NodeSchool, Learn JS, JavaScript.com, LeetCode, Skillbox, Нетология, Geekbrains, SkillFactory, HTML Academy, Hexlet, JavaRush и другие.
