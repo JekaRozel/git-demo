@@ -168,6 +168,12 @@ edit-sources - открыть с настройками репозиториев
 source - скачать исходный код пакета в текущую папку;
 build-dep - установить зависимости необходимые для сборки выбранного пакета;
  
+ для доступа к инету из виртуальной машины. Внутри Виртуальной машины
+ >cd /etc/NetwokManager/
+ >nano NetworkManager.conf
+ меняем [ifupdown]=false на true
+ >service network-manager restart
+ 
  
  
  
