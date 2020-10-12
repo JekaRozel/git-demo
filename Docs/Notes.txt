@@ -143,6 +143,10 @@ boolean b4 = true && true;   // true, all else cases false
 boolean b1 = false || false; // false, all else cases true
  
  
+ 
+ 
+ 
+ 
 	Course Hacking
  footprinting - первичная, поверхностная разведка. Сбор информации по выбранной цели.
  DoS - deny of serving (from one machine)
