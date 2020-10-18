@@ -186,11 +186,29 @@ build-dep - установить зависимости необходимые �
  /mount/cdrom0/VBoxLinuxAdditions.run
  cp -v показывает процесс копирования
  sudo adduser name
+ proxychains предустановлен в kali
  nano /etc/proxychains.conf здесь надо socks5, dynamic_chain, proxy_dns
  service tor status 	(start)
  proxychains firefox www.duckduckgo.com проверка настройки.
- 
- 
+ dnsleaktest.com
+ nmaps ?
+ ищем free socks5 proxies Россия китай нидерланды германия
+ 	// У меня прокси не заработали
+ VPN
+ nano /etc/NetworkManager/NetworkManager.conf 
+ меняем [ifupdown] managed=true
+ service network-manager restart (у меня не работает, нет сервиса)
+ ставим 6 пакетов  network-manager-
+ -openvpn-gnome, -pptp, -pptp-gnome, -strongswan, -vpnc, -vpnc-gnome.
+ качаем openvpn с vpnbook.com
+ openvpn --config lalala.ovpn
+ uesrname & pas on site
+ в файле nano /etc/resolv.conf  комментим nameserver bla-bla 
+ находим opendns в браузере копируем оттуда только два адреса:
+ 208.67.222.222 & 208.67.220.220 вставляем их в /etc/resolv.conf  как nameserver.
+ Для изменения мак адреса устройства(чаще сетевой карты) используем ifconfig для определения названия устройства
+ macchanger -s eth0  ; macchanger -r eth0
+ автоматизация crontab -e добавляем строку @reboot macchanger -r eth0  
  
  
  
