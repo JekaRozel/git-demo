@@ -79,5 +79,13 @@ sudo pacman -S xfce4 xfce4-goodies sddm
  
 теперь можно и шрифты:
 sudo pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-bitstream-vera ttf-arphic-ukai ttf-arphic-uming ttf-hanazono
+ 
+!!! GRUB!!!
+# mount /dev/sda2 /mnt           //mount arch
+# mkdir -p /mnt/boot/efi
+# mount /dev/sda1 /mnt/boot/efi   //mount uefi into arch
+
+# arch-chroot /mnt
+# grub-install /dev/sda
 
 

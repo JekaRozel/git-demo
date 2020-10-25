@@ -237,6 +237,12 @@ grub-mkconfig -o /boot/grub/grub.cfg
  
  
  
+ The range of an integer type is calculated as −(2n−1) to (2n−1)−1, where n is the number of bits. The range includes 0, which is the reason for subtracting 1 from the upper bound.
+    byte: size 8 bits (1 byte), range from -128 to 127
+    short: size 16 bits (2 bytes), range from -32768 to 32767
+    int: size 32 bits (4 bytes), range from −(231) to (231)−1
+    long: size 64 bits (8 bytes), range from −(263) to (263)−1
+double (64 bits) and float (32 bits)(~6-7 decimal digits for float and ~14-16 decimal digits for double)
  
  Это список сайтов указанных на Андерсоне:
 Codecademy, Udacity, Code School, Treehouse, FreeCodeCamp, Udemy, Coursera, Codewars, Codingame, Khan Academy, edX, W3Schools, Hackr.io, Bento.io, Solo Learn, Codeasy.net, Edabit, GITHUB, Sitepoint, Crunchzilla, One Month, LearnCode. Academy, Thenewboston, Derek Banas, Programming Knowledge, Softwarehow, Marksheet, Shay Howe, NodeSchool, Learn JS, JavaScript.com, LeetCode, Skillbox, Нетология, Geekbrains, SkillFactory, HTML Academy, Hexlet, JavaRush и другие.
