@@ -142,8 +142,16 @@ boolean
 boolean b4 = true && true;   // true, all else cases false 
 boolean b1 = false || false; // false, all else cases true
  
- 
- 
+  Signature is the combination of the name of a method and its parameter types. 
+ java.util.Arrays
+ Arrays.toString(array);
+ byte[] famousNumbers = { 0, 1, 2, 4, 8, 16, 32, 64 };
+String arrayAsString = Arrays.toString(famousNumbers); 	   
+ Arrays.sort(array):
+ Arrays.equals(numbers1, numbers2) /same elements in same places
+ Arrays.fill(mass, 0, size / 2, 'A'); // size - any int, length.
+ Arrays.fill(mass, size / 2, size, 'B'); //or Arrays.fill(arrayName,fromIndex,toIndex,value)
+
  
  
  
