@@ -61,6 +61,9 @@ javac -d bin src/File.java
 dpkg -l список установленных пакетов
 bluetooth on/off для старенького компака
 
+sudo add-apt-repository ppa:репозиторий добавить репозиторий
+sudo ppa-purge ppa:репозиторий удалить репозиторий
+
 xdg-open ~/.local/share/applications - в эту папку надо перетащить запускающий программу файл и он отобразится в списке приложений.
 ./команда --register-app создать инконку для запуска командны!
 lsb_release -a - версия ос

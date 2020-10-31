@@ -142,8 +142,16 @@ boolean
 boolean b4 = true && true;   // true, all else cases false 
 boolean b1 = false || false; // false, all else cases true
  
- 
- 
+  Signature is the combination of the name of a method and its parameter types. 
+ java.util.Arrays
+ Arrays.toString(array);
+ byte[] famousNumbers = { 0, 1, 2, 4, 8, 16, 32, 64 };
+String arrayAsString = Arrays.toString(famousNumbers); 	   
+ Arrays.sort(array):
+ Arrays.equals(numbers1, numbers2) /same elements in same places
+ Arrays.fill(mass, 0, size / 2, 'A'); // size - any int, length.
+ Arrays.fill(mass, size / 2, size, 'B'); //or Arrays.fill(arrayName,fromIndex,toIndex,value)
+
  
  
  
@@ -212,7 +220,15 @@ build-dep - установить зависимости необходимые �
  Для изменения мак адреса устройства(чаще сетевой карты) используем ifconfig для определения названия устройства
  macchanger -s eth0  ; macchanger -r eth0
  автоматизация crontab -e добавляем строку @reboot macchanger -r eth0   
- полезные сайты scanme.nmap.org, magor ip blocks, exploit-db.com.
+   //у меня пропадает инет при смене мака
+ Nmap
+ сканируют обычно диапазон ip адресов: 10.0.0-255.1-254
+ для поиска владельцев адресов есть сайт major ip addresses site
+ имея ip через поисковик who is ip можно узнать кто и где
+  //ДНС трафик идёт по порту 53
+ nslookup scanme.nmap.org выдаст ip адрес сайта scanme.nmap.org и наооборот nslookup ip выдаст имя сайта
+ 
+  полезные сайты scanme.nmap.org, magor ip blocks, exploit-db.com.
  whois + ip in google - a lot of information
  nslookup ip/name быстрый/короткий поиск
  nmap для сканирования сетей.
@@ -226,6 +242,23 @@ build-dep - установить зависимости необходимые �
  для взлома 
  aircrack-ng
  reaver (нет в репозиториях)
+ 	REPAIR GRUB IN ARCH
+ pacman -S grub efibootmgr
+mkdir /boot/efi
+mount /dev/sda1 /boot/efi
+lsblk # для проверки всё ли норм смонтировано 
+grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi --removable
+grub-mkconfig -o /boot/grub/grub.cfg
+ 
+ 
+ 
+ 
+ 
+ 
+ 	НУМЕРАЦИЯ ПОРТОВ
+ 	22 ssh, 25 smtp(mail server), 53 dns, 80 http, 9929 nping-echo, 
+ 
+
  
  The range of an integer type is calculated as −(2n−1) to (2n−1)−1, where n is the number of bits. The range includes 0, which is the reason for subtracting 1 from the upper bound.
     byte: size 8 bits (1 byte), range from -128 to 127
