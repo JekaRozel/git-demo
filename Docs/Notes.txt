@@ -194,6 +194,9 @@ build-dep - установить зависимости необходимые �
  nmaps ?
  ищем free socks5 proxies Россия китай нидерланды германия
  	// У меня прокси не заработали
+  Используем tor.
+  search hiddenwiki (тут можно найти прокси) 
+
  VPN
  nano /etc/NetworkManager/NetworkManager.conf 
  меняем [ifupdown] managed=true
@@ -208,19 +211,21 @@ build-dep - установить зависимости необходимые �
  208.67.222.222 & 208.67.220.220 вставляем их в /etc/resolv.conf  как nameserver.
  Для изменения мак адреса устройства(чаще сетевой карты) используем ifconfig для определения названия устройства
  macchanger -s eth0  ; macchanger -r eth0
- автоматизация crontab -e добавляем строку @reboot macchanger -r eth0  
+ автоматизация crontab -e добавляем строку @reboot macchanger -r eth0   
+ полезные сайты scanme.nmap.org, magor ip blocks, exploit-db.com.
+ whois + ip in google - a lot of information
+ nslookup ip/name быстрый/короткий поиск
+ nmap для сканирования сетей.
+ Используем Nmap (Znmap - графический аналог)
+ выводит open/close/filtered(unknown), показывает какие хосты есть в сети и их доступность
+  nmap -oG - 10.0.2.15 -vv > SCAN
+ cat SCAN | grep Up | awk -F " " '{print $2}' > SCAN2
+ nmap -iL SCAN2 -vv
+ awk - работа с текстом. разобрать функционал
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ для взлома 
+ aircrack-ng
+ reaver (нет в репозиториях)
  
  The range of an integer type is calculated as −(2n−1) to (2n−1)−1, where n is the number of bits. The range includes 0, which is the reason for subtracting 1 from the upper bound.
     byte: size 8 bits (1 byte), range from -128 to 127
