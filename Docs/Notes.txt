@@ -285,7 +285,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
  	НУМЕРАЦИЯ ПОРТОВ
  	22 ssh, 25 smtp(mail server), 53 dns, 80 http, 9929 nping-echo, 
  
-
+win+r devmgmt.msc диспетчер устройств
  
  The range of an integer type is calculated as −(2n−1) to (2n−1)−1, where n is the number of bits. The range includes 0, which is the reason for subtracting 1 from the upper bound.
     byte: size 8 bits (1 byte), range from -128 to 127
