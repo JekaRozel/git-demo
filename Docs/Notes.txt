@@ -52,7 +52,8 @@ iteno
 	   /\/\/\/\/\/\/\/\/\/\
 	JetBrains Java
 Since Java 11, you can write var
-
+Math.round(11.11);
+Character.isLetter('a'); 
 
 
 
