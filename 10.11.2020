@@ -11,4 +11,20 @@ double /0 = infinity Math.sqrt(2.0) = 1.4142135623730951 Math.sqrt(-1.0) = NaN
 double ~ .15  float ~ .7
 API Application Programming Interface интерфейс прикладного программирования. стр 53. примеры.
 сигнатура(прототип) - " тип возвращаемого значения + имя метода + тип аргумента "
+-14/3 = -4   14/-3 = -4   -14%3=-2   14/-3=2
+стр 65. задачи
+72
+
+
+
+
+монтироавние NTFS для записи
+sudo pacman -S ntfs-3g
+mount -t ntfs-3g /dev/sdb1 /mnt
+
+запустьть невыполняющееся приложение(или действие)
+Check if immutable flag is set on .bash_profile:
+lsattr .bash_profile
+You can remove it with:
+chattr -i .bash_profile
 
