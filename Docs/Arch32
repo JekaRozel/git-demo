@@ -88,8 +88,15 @@ sudo pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-bitstream-vera tt
 # arch-chroot /mnt grub-install /dev/sda
 
 pacman -Rdd удаления невзирая на зависимости УДАЛИЛИ LINUX-HARDENED  
-install: 1 sudo pacman -S linux-lts 2 sudo grub-mkconfig -o /boot/grub/grub.cfg 3 sudo pacmna -S 
-linux-lts-headers 4 sudo pacman -Rsu linux намучился и прочёл в комментах : "Если бы я хотел ЛТС, то я 
+
+
+
+Arch after install: 
+1 	sudo pacman -S linux-lts 
+2 	sudo grub-mkconfig -o /boot/grub/grub.cfg 
+3 	sudo pacmna -S linux-lts-headers 
+4 	sudo pacman -Rsu linux 
+намучaлся и прочёл в комментах : "Если бы я хотел ЛТС, то я 
 не ставил бы арч". вернул как было
 
 # 4. Install some key packages
