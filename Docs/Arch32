@@ -38,7 +38,7 @@ pacstrap -i /mnt base base-devel grub linux linux-headers nano dhcpcd
 
 Создадим загрузочный RAM диск mkinitcpio -p linux
 Установим загрузчик (для BIOS) grub-install /dev/sda
-grub-mkconfig -o /boot/grub/grub.cfg
+grub-mkconfig -o /boot/grub/grub. cfg
 Зададим хостнейм echo MYHOSTNAME > /etc/hostname (либо hostnamectl set-hostname myhostname)
 Изменим пароль root passwd
 Добавим нового пользователя useradd -m -g users -G audio,games,lp,optical,power,scanner,storage,video,wheel -s /bin/bash MYUSERNAME 
@@ -88,4 +88,6 @@ sudo pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-bitstream-vera tt
 # arch-chroot /mnt
 # grub-install /dev/sda
 
+pacman -Rdd удаления невзирая на зависимости
+УДАЛИЛИ LINUX-HARDENED
 
