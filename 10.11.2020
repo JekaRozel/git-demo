@@ -15,3 +15,16 @@ API Application Programming Interface интерфейс прикладного 
 стр 65. задачи
 72
 
+
+
+
+монтироавние NTFS для записи
+sudo pacman -S ntfs-3g
+mount -t ntfs-3g /dev/sdb1 /mnt
+
+запустьть невыполняющееся приложение(или действие)
+Check if immutable flag is set on .bash_profile:
+lsattr .bash_profile
+You can remove it with:
+chattr -i .bash_profile
+
