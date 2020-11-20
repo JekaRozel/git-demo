@@ -28,6 +28,7 @@ lsattr .bash_profile
 You can remove it with:
 chattr -i .bash_profile
 
+chmode +x fiel.sh делаем испольняемым file.sh
 
 
 grep -inr {string} найти строку в любом файле 
