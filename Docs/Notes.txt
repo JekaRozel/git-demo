@@ -1,6 +1,6 @@
-
 	GIT
  most popular: commit, branch, checkout, cherry-pick, reset, revert, rebase, merge
+
  Слияние: merge "имя ветки КОТОРУЮ мержим", rebase имя ветки КУДА ребэйзим"
 HEAD всегда указывает на последний коммит (простой checkout C4 преносит его туда)
 Отделение (detaching) HEAD означает лишь присвоение его не ветке, а конкретному коммиту  (просто checkout C4; где С4 это идентификатор/hash)
@@ -301,6 +301,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
  	22 ssh, 25 smtp(mail server), 53 dns, 80 http, 9929 nping-echo, 
  
 win+r devmgmt.msc диспетчер устройств
+инкапсуляция - объединение данных и методов работы с ними в единую сущьность(объект). Возможна инкапсуляция без сокрытия: например, класс содержащий поля и методы, использующие эти поля, но все поля объявлены публичными (тем не менее, он инкапсулирует данные и методы).  А также возможно сокрытие без инкапсуляции: например, класс-хелпер в котором вообще нет полей, но есть публичные и приватные методы. Приватные методы в данном случае являются примером сокрытия.
  
  The range of an integer type is calculated as −(2n−1) to (2n−1)−1, where n is the number of bits. The range includes 0, which is the reason for subtracting 1 from the upper bound.
     byte: size 8 bits (1 byte), range from -128 to 127
