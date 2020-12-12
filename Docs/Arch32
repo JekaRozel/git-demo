@@ -1,12 +1,5 @@
  Setup Arch
- Ставим английский, поэтому  В файле /etc/locale.gen раскоментируем строку #en_US.UTF-8 UTF-8
-Обновим текущую локаль системы:
-locale-gen
-Чтобы проверить соединение, попробуйте, работает ли ping -c 5 archlinux.org
-Включите синхронизацию времени через интернет: timedatectl set-ntp true
- доступные часовые зоны для Европы: timedatectl list-timezones | grep Europe
-Установите ваш часовой пояс: timedatectl set-timezone Europe/Minsk
-Проверяем timedatectl status
+ 
 Создаем разделы на диске через fdisk:
 sgdisk --zap-all /dev/sdX - далить MBR или GPT таблицы
 partprobe
@@ -26,8 +19,16 @@ fdisk /dev/sdX
 Создадим каталог для монтирования boot раздела:  mkdir /mnt/boot
 Смонтируем загрузочный раздел: mount /dev/sda1 /mnt/boot
 Подключим swa swapon /dev/sda2
-Установка пакетов
 
+	Ставим английский, поэтому  В файле /etc/locale.gen раскоментируем строку #en_US.UTF-8 UTF-8
+ Обновим текущую локаль системы :locale-gen
+Чтобы проверить соединение, попробуйте, работает ли ping -c 5 archlinux.org
+ Включите синхронизацию времени через интернет: timedatectl set-ntp true
+доступные часовые зоны для Европы: timedatectl list-timezones | grep Europe
+Установите ваш часовой пояс: timedatectl set-timezone Europe/Minsk
+Проверяем timedatectl status
+
+Установка пакетов
 Установим базовые пакеты системы.
 pacstrap -i /mnt base base-devel grub linux linux-headers nano dhcpcd 
 
@@ -35,10 +36,11 @@ pacstrap -i /mnt base base-devel grub linux linux-headers nano dhcpcd
 Сгенерируем fstab, для этого используем следующую команду: genfstab -p /mnt >> /mnt/etc/fstab
 Перейдём в установленную систему: arch-chroot /mnt /bin/bash (либо arch-chroot /mnt) 
 либо можно отдавать команды в систему из текущего положения arch-chroot /mnt pacman -S grub
-
 Создадим загрузочный RAM диск mkinitcpio -p linux
+
 Установим загрузчик (для BIOS) grub-install /dev/sda
-grub-mkconfig -o /boot/grub/grub. cfg
+для UEFI : grub-install --target=x86_64-efi --efi-directory=boot --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
 Зададим хостнейм echo MYHOSTNAME > /etc/hostname (либо hostnamectl set-hostname myhostname)
 Изменим пароль root passwd
 Добавим нового пользователя useradd -m -g users -G audio,games,lp,optical,power,scanner,storage,video,wheel -s /bin/bash MYUSERNAME 
@@ -73,7 +75,7 @@ sudo pacman -S xorg-server xorg-xinit xorg-apps mesa-libgl xterm (тачпад �
 
 установка и настройка графического окружения Xfce с менеджером входа SDDM: 
 sudo pacman -S xfce4 xfce4-goodies sddm
-Добавим sddm в демоны: sudo systemctl enable sddm.service
+Добавим sddm в демоны: sudo systemctl enable sddm.service 
  Важно sudo systemctl reboot
  Печаль sddm не грузят. Пробуем другие
  
@@ -81,9 +83,9 @@ sudo pacman -S xfce4 xfce4-goodies sddm
 sudo pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-bitstream-vera ttf-arphic-ukai ttf-arphic-uming ttf-hanazono
  
 !!! GRUB!!!
-# mount /dev/sda2 /mnt           //mount arch
+# mount /dev/sda7 /mnt           //mount arch
 # mkdir -p /mnt/boot/efi
-# mount /dev/sda1 /mnt/boot/efi   //mount uefi into arch
+# mount /dev/sda2 /mnt/boot/efi   //mount uefi into arch
 
 # arch-chroot /mnt grub-install /dev/sda
 
