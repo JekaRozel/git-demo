@@ -1,6 +1,5 @@
-	GIT
- most popular: commit, branch, checkout, cherry-pick, reset, revert, rebase, merge
 
+ most popular: commit, branch, checkout, cherry-pick, reset, revert, rebase, merge
  Слияние: merge "имя ветки КОТОРУЮ мержим", rebase имя ветки КУДА ребэйзим"
 HEAD всегда указывает на последний коммит (простой checkout C4 преносит его туда)
 Отделение (detaching) HEAD означает лишь присвоение его не ветке, а конкретному коммиту  (просто checkout C4; где С4 это идентификатор/hash)
@@ -17,16 +16,9 @@ git describe <ref> - показывает насколько далеко ком
 git fetch - скачать из удалённого репозитория
 git pull - аналог fetch + merge, git pull --rebase - аналог fetch + rebase
 
-Если мерцает redshift:
-pgrep redshift | xargs -n1 kill -9
-redshift-gtk & disown
 
-pacman -Qi информация о пакетах
+
 	/\/\/\/\/\/\/\
-	
-	
-	
-	    
 	     Jenkins
 jekaroze 1q2w3e4r5t6y7
 jenkins  это служба windows. win+r sirvices.msc
@@ -49,13 +41,221 @@ iteno
            /\/\/\/\/\/\/\/\/\/\
 		   
 		   
+	   JavaScript
+IDE
+    Visual Studio Code (бесплатно).
+    WebStorm (платно).
+Light
+    Atom (кроссплатформенный, бесплатный).
+    Sublime Text (кроссплатформенный, условно-бесплатный).
+    Notepad++ (Windows, бесплатный).
+    Vim и Emacs тоже хороши, если знать, как ими пользоваться.
+ Если атрибут src установлен, содержимое тега script будет игнорироваться.
+Инструкции – это синтаксические конструкции и команды, которые выполняют действия.
+Когда 'use strict' находится в начале скрипта, весь сценарий работает в «современном» режиме. должен быть в первой строке. Нет никакого способа отменить use strict
+Можно так:
+'use strict'; <Shift+Enter для перехода на новую строку>
+//  ...ваш код...
+<Enter для запуска>
+Всегда используйте «use strict»
+Имя переменной должно содержать только буквы, цифры или символы $ и _. Первый символ не должен быть цифрой.
+технически возможно создать переменную простым присвоением значения без использования let. если мы не включаем use strict
+неизменяемая переменная, используйте const вместо let:
+ константы с именами, записанными ЗАГЛАВНЫМИ буквами, используются только как псевдонимы для «жёстко закодированных» значений. строчными буквами обозначаются константы,
+значения которых вычисляется, а не задано по-умолчанию.
+ Дополнительная переменная – это добро, а не зло.
+ Переменная в JavaScript может содержать любые данные. В один момент там может быть строка, а в другой – число
+динамически типизированными
+	Есть восемь основных типов данных в JavaScript.
+ Числа: целые, с запятой, специальные числовые значения Infinity(результат деления на 0), -Infinity и NaN
+ Математические операции в JavaScript «безопасны». Мы можем делать что угодно: делить на ноль, обращаться со строками как с числами и т.д. худший результат - NaN
+ Тип BigInt ( больше, чем 253) был добавлен в JavaScript, чтобы дать возможность работать с целыми числами произвольной длины. Число должно заканчиваться n (123n),
+поддерживаются только в браузерах Firefox и Chrome.
+ Строка (string) в JavaScript должна быть заключена в кавычки. Двойные или одинарные кавычки являются «простыми», между ними нет разницы. Обратные кавычки позволяют
+нам встраивать выражения (их результат) в строку, заключая их в  ${вычисляемое выражение}, . 
+// Вставим переменную
+alert( `Привет, ${name}!` ); // Привет, значение name.
+// Вставим выражение
+alert( `результат: ${1 + 2}` ); // результат: 3
+ Нет типа char.
+ Булевый тип (boolean) может принимать только два значения: true (истина) и false (ложь).
+Специальное значение null не относится ни к одному из типов, описанных выше. Оно формирует отдельный тип, который содержит только значение null. 
+Это просто специальное значение, которое представляет собой «ничего», «пусто» или «значение неизвестно».
+Если переменная объявлена, но ей не присвоено никакого значения, то её значением будет undefined. Обычно null используется для присвоения переменной «пустого» 
+или «неизвестного» значения, а undefined – для проверок, была ли переменная назначена.
+Тип object. Тип symbol
+    Синтаксис оператора: typeof x.
+    Синтаксис функции: typeof(x).
+typeof null является "object" - намеренная ошибка языка.
+	преобразование примитивных значений
+alert(value) или  функция String(value) преобразует значение к строке. Преобразование происходит очевидным образом.
+Численное преобразование происходит в математических функциях и выражениях.
+Если строка не может быть явно приведена к числу, то результатом преобразования будет NaN
+undefined 	NaN
+null 	0
+true / false 	1 / 0
+string 	Пробельные символы по краям обрезаются. Далее, если остаётся пустая строка, то 0, иначе из непустой строки «считывается» число. При ошибке результат NaN.
+Учтите, что null и undefined ведут себя по-разному. Так, null становится нулём, тогда как undefined приводится к NaN.
+Все математические операторы выполняют численное преобразование, только если одно из СЛАГАЕМЫХ(+) является строкой, тогда и все остальные приводятся к строкам.
+Следует помнить что операции выполняются последовательно, слева направо.
+	Логическое преобразование
+ Значения, которые интуитивно «пустые», вроде 0, пустой строки, null, undefined и NaN, становятся false.
+Все остальные значения становятся true. любая непустая строка это true
+null становится 0 после численного преобразования. 
+undefined становится NaN после численного преобразования.
+Пробельные символы, такие как \t и \n по краям строки игнорируются при преобразовании в число.
+  Операнд – то, к чему применяется оператор, Унарный - применяемый к одному операнду, бинарный - применяется к двум операндам.
+"+" преобразует нечисла в числа (true/false в 1/0) то же самое, что и Number(...), только короче.
+alert( +apples + +oranges ); // 5 //тоже самое, но более длинный вариант alert( Number(apples) + Number(oranges) ); // 5
+ Приоритет: унарный +/-,*,/,+,-,=. Все операторы возвращают значение.
+ a % b – это остаток от деления a на b
+ Оператор возведения в степень ** недавно добавили в язык. Для натурального числа b результат a ** b равен a, умноженному на само себя b раз.
+ Увеличение/уменьшение переменной на единицу - Инкремент/декремент, можно применить только к переменной. 
+Если хочется тут же использовать результат, то нужна префиксная форма, Если нужно увеличить и при этом получить значение переменной до увеличения – постфиксная форма
+Операторы ++/-- могут также использоваться внутри выражений. Их приоритет выше, чем у арифметических операций. Инкремент/декремент можно использовать в любых выражениях
+   Побитовые операторы работают с 32-разрядными целыми числами (при необходимости приводят к ним), на уровне их внутреннего двоичного представления.
+    AND(и) ( & )
+    OR(или) ( | )
+    XOR(побитовое исключающее или) ( ^ )
+    NOT(не) ( ~ )
+    LEFT SHIFT(левый сдвиг) ( << )
+    RIGHT SHIFT(правый сдвиг) ( >> )
+    ZERO-FILL RIGHT SHIFT(правый сдвиг с заполнением нулями) ( >>> )
+  Сокращённая арифметика с присваиванием - += и *=.
+  Оператор запятая предоставляет нам возможность вычислять несколько выражений, разделяя их запятой. Каждое выражение выполняется, но возвращается результат только 
+последнего.
+	Сравнение.
+  Строки сравниваются последовательн посимвольно. Сравнивается нумерация символов в кодировке Unicode Б>А.
+ При сравнении разных типов каждое значение приводится к числу. true = 1, false = 0, ' ' = 0.
+Оператор строгого равенства === (строгого неравенства !==) проверяет равенство без приведения типов. Попытка сравнения разных типов даёт false.
+null == undefined - true, null === undefined - false. При других сравнениях <= >= и т.д. null - 0 undefined - NaN. null == undefined равны друг другу и ничему больше.
+null > 0, null == 0 - false, но null >= 0 - true. > и >= работают по-разному.
+  Alert, prompt, confirm. Вид и расположение зависят от браузера.ва
+ alert('text'); показывает сообщение.
+ prompt("text", 'default');  показывает сообщение, запрашивает ввод текста, есил OK выводит этот текст, если Отмена или Esc то null.
+  let a = prompt("text", 'default'); alert(`you text is ${a}`);
+ confirm("text"); показывает сообщение и ждёт, если ОК то ture, если Отмена или Esc то false.
+  let b = confirm("Confirm?"); alert(b);
+	If, else, else if.
+ 0, " ", null, undefined, NaN  -  falsy (принимают значение false), остальные  -  truthy (принимают значение true).
+	тернарный оператор
+ let a = условие ? значение true : значение false.
+ Несколько знаков ?.
+ (а < 20) ? '<20' :
+ (a < 40) ? '<40' :
+ (a < 50) ? '<50' :
+ '>50;  условия проверяются по порядку.
+  || или сравнивает значения до первого true. аналог if. Возвращает первое истинное значение или последнее ложное (если нет истинных)
+  && и сравнивает значения до первого false.  аналог if. Возвращает первое ложное значение или последнее истинное (если нет ложных) 
+  приоритет ! выше чем у &&, а у && выше чем у ||.
+  ! не !! используют для приведения к логическому типу первый ! приводит к противоположному логическому, второй ! оставляет логическим, но инвертирует значение к 
+начальному. Аналог "!!значение" встроенная функция "Boolean(значеине)".
+  вызов alert(1) не возвращает true/false, а undefined. //Вот тут не разобрался полностью.
+	while
+ итерация - выполнение тела цикла. 
+ встроенное объявление переменной, объявление переменной внутри цикла (for) вне цикла её не существует.
+ break - прервать цикл, continue - пропустить цикл. Не используются с тернарным оператором
+ используются метки, т.к. break/continue действуют только на текущий цикл не на высшие. Метка:, вложенные циклы, break/continue Метка. прервёт/пропустит все циклы внутри
+Метка.
+ префикс или постфикс инкремент/декремент - для while имеют значени, для for нет.
+	Switch (а) { case a: alert('smt'); break; default: alert('smt else');}
+ проверяет на строгое равенство. ===, Swich и case допускают любое выражение в качестве аргумента.
+	Функции
+  function name() { alert('smt')} FUNCTION DECLARATION объявление функции. Можно использовать из любого места скрипта( и до объявления); если заключена в блок, то снаружи
+не видна.
+локальные переменные - объявленные внутри функции не видны снаружи. А внешние можно использовать внутри, даже изменять их. При 
+одинаковых именах внешней и внутренней - предпочтение отдаётся внутренней. Аргумент функции можно задать по-умолчанию, типа text = "smt". Это значение будет 
+использовано только если значение text не будет задано( text === undefined)
+ Глобальная переменная - переменная видная для любой функции.
+ return без значения приводит к немедленному выходу из функции.
+ функция не возвращающая значения === undefined. 
+ никогда не переносить выражени return на отдельную строку, JS подставит после return ;.
+  let a = function() {alert("smt");}; FUNCTION EXPRESSION функциональное выражение. Можно использовать строго после объявления.
+ запись функции без скобок позволяет использовать её как простое значение: копировать и т.д.
+    Колбэк-функция: function ask(question, yes, no) { if (confirm(question)) yes() else no(); } function ok() {alert("ok");} function no() {alert("no");} 
+		 применение: ask("You agree?", ok, no);
+    Функции-стрелки: let sum = (a, b) => a + b; если аргументов нет указываются пустые (), либо если вместо a + b сложные вычисления, то надо использовать {... return}
+
+ Отладка – это процесс поиска и исправления ошибок в скриптe.
+ Точки "останова" можно установить через F12 консоль, либо прямо в коде указать debugger;
+В консоли показываются:
+Watch - текущие значения выражений
+Call Stack - последовательность вызовов функций
+Scope - текущие переменные
+Линтеры - автоматизированные средства проверки стиля кода. JSLint, JSHint, ESLint.
+Mocha - фреймворк для автоматического тестирования.
+ Чтобы современные функции поддерживались в старых движках, надо установить транспилер и добавить поилфил.
+Babel - транспилер. Переписывает современный JS код в  предыдущий стандарт.
+Полифил - означает, что скрипт "заполняет" пробелы и добавляет современные функции. core js, polyfill.io.
+
+	Объекты 
+ Объект используют для хранения коллекций различных значений и более сложных сущностей.
+ объект как ящик с подписанными папками. Каждый элемент хранится в папке, на которой написан ключ.
+Можно создать с помощью {...} с необязательным списком свойств. Свойства - пара "ключ:значение", где ключ - это строка(имя свойства), а значение - что угодно.
+ Варианты синтаксиса:
+"конструктор объекта" let user = new Object();
+"литерал объекта"     let user = {}; /обычно делают так.
+ Свойства объекта указывают в {}, их так же называют полями объекта, перечисляются через запятую. ключ/имя/идентификатор:значение, ключ/имя/идентификатор:значение...
+пример: let user = { name: "John", age: 20};
+добавляем свойство с логическим значением user.isAdmin = true;
+удаляем свойство delete user.age;
+составное имя свойства должно быть в кавычках "good boy": false. Доступ к свойству с составным именем НЕ через user.good boy, а через []. alert(user["good boy"]); 
+[] можно использовать с любыми именами, не только составными. Даёт большую гибкость используя переменные. Позволяют использовать неизвестные в данный момент: 
+вычисляемые значения и значения пользовательского ввода.
+ Висячая запятая ставится в конце перечисления свойств вместо точки или точки с запятой.
+ Использование существующие переменные как значения для свойств с тем же именем:
+name: name, age: age, (когда имена совпадают). Распространено сокращение: name, age,. В одном объекте можно использовать короткие и обычные свойства.
+ ключ/имя/идентификатор может быть тольк строковым и символьным, остальные типы будут автоматически преобразованы к строке.
+ в отличие от имён переменных для ключ/имя/идентификатор можно использовать зарезервированные языком слова. Исключение имя _proto_, у него своё поведение.
+ У объектов можно получать доступ к свойствам, которых не существует. Тогда возвращается undefined. 
+in специальный оператор для проверки существования свойства в объекте. "name" in object. вернёт true/false. Если name без кавычек, значит мы указываем переменную, 
+в которой находится имя свойства. in позволяет найти свойства, которые в объекте определены как undefined.
+ Цикл for in. Объявялем новую переменную key для извлечения свойств и их значений. // key - произвольное слово.
+для объекта let user = {...};
+ for(let key in user) {
+     alert (key);
+     alert (user[key]); }
+Свойства упорядочены особым образом: свойства с целочисленными ключами сортируются по возрастанию, остальные располагаются в порядке создания. Целочисленное - то которое можно преобразовать в целое число, а затем обратно в строку и оно не изменится.
+ Объекты хранятся и копируются "по ссылке" (примитивы - "по значению"). При копировании примитива - создаётся новый экземпляр, При копировании объекта - создаётся ссылка, сам объект не дублируется. Операторы равенства == и строгого равенства === для объектов работают одинаково. Два объекта равны только в том случае, если это один и тот же объект. 
+Для сравнений типа obj1 > obj2 или для сравнения с примитивом obj == 5 объекты преобразуются в примитивы. Но сама необходимость такого сравнения чаще всего ошибка.
+Объект, объявленный через const, может быть изменён. Объявление const защищает от изменений только само значение объекта, не значения его свойств, их мы можем менять.
+Можно делать константами свойства объекта. Об этом позже.
+ Если возможность создать (при необходимости) копию объекта: let obj1 = {}; let obj2 = {}; копируем значения из obj1 в obj2.
+ for (let key in obj1) { obj2[key] = obj1[key];) - создаём независимую копию.
+ Есть встроенный метод: Object.assign(dest, [src1, src2, src3...]) В первый объект копируются свойства всех последующих. После копирования метод возвращает объект dest. Если принимающий объект dest уже имеет свойство с таким именем, оно будет перезаписано. Можно просто клонировать let clone = Object.assign({}, user);
+ «глубокое клонирование» - когда свойства объекта так же являются объектами. Рекомендуется использовать алгоритм из библиотеки lodash, метод _.cloneDeep(obj).
+ Все "так называемые" типы данных (Array, Date, Error)на самом деле являются не самостоятельным, а Object типом данных.
+ 
+
+     
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..
 	   /\/\/\/\/\/\/\/\/\/\
 	JetBrains Java
 Since Java 11, you can write var
-Math.round(11.11);
-Character.isLetter('a'); 
 
+	Linux wifi
+ifconfig. 
+sudo apt install net-tools -y
 
+ HKLM\SYSTEM\CurrentControlSet\control\TimeZoneInformation /v RealTimelsUniversal /t REG_QWORD /d 1                                                        sc config w32time start= disabled    
+
+ при установке арча  к иксам (к основному xorg) надо ещё установить 
+xorg-xinit xterm 
 
 		Основы информатики
   Информация - это сведения, знания и   сообщения,получаемые человеком из разных источников.
@@ -85,230 +285,15 @@ Character.isLetter('a');
   1Килобайт(Кб) = 1024 байт(2^10)
   1Мегабайт(Мб) = 1048576 (2^20) байт и т.д.
   
- 
- Основные команды терминала:
-man signal > man_signal создание файла и запись вывода команды в него
-man signal 1> man_signal 2> man_signal_error_log  где 1>stdout 2>stderr
-man signal > man_signal 2>&1 stdout&stderr
-w - Данная команда показывает, кто залогинен в системе.
-ls -tr  сортировка от старых к новым
-переместить или переименовать mv
-less - аналог cat только постраничный
-ps - список процессов
-fg - запуск приостановленного процесса
-ps aux | head -6  6 первых из списка запущенных процессов
-ps axjf дерево запущенных процессов
-kill по-умолчпнию посылает SIGTERM
-kill -9 name  убиваетSIGKILL наверняка, можно потерять несохранённые данные 
-
-mount -t ntfs /dev/sdb1 /mnt/ntfs  D как монтировать диск для чтения иs записи
   
-Useful methods of strings
-
- String is: 
-    immutable type: it's impossible to change a character in a string;
-    it has methods for getting individual characters and extracting substrings;
-    individual characters can be accessed by indexes, the first character has the index 0, the last one – the length of the string – 1;
-    non-primitive type.
-
-The standard library of Java provides a lot of useful methods for processing strings:
-
-    length() returns the number of characters in the string;
-    charAt(int index) returns a character by its index;
-
-    isEmpty() returns true if the string is empty, otherwise – false;
-    toUpperCase() returns a new string in uppercase;
-    toLowerCase() returns a new string in lowercase;
-    startsWith(prefix) returns true if the string starts with the given string prefix, otherwise, false;
-    endsWith(suffix) returns true if the string ends with the given string suffix, otherwise, false.
-    contains(...) returns true if the string contains the given string or character;
-    substring(beginIndex, endIndex) returns a substring of the string in the range: beginIndex, endIndex - 1;
-    replace(old, new) returns a new string obtained by replacing all occurrences of old with new that can be chars or strings.
-    trim() returns a copy of the string obtained by omitting the leading and trailing whitespace. Note that whitespace includes not only space character, but mostly everything that looks empty: tab, carriage return, newline character, etc.
-
-it throws
- NullPointerException If a string is null
- StringIndexOutOfBoundsException If you try to access a non-existing character by an index.
- 
-comparing strings
- s1.equals(s2)
- s2.equalsIgnoreCase(s1)
-
-boolean 
- In Java, 0 is not the same as false.
- ^ XOR (exclusive OR) is a binary operator that returns true if boolean operands have different values, otherwise, it is false.
- Precedence: ! (NOT), ^ (XOR), && (AND), || (OR).
- In the boolean logic (not Java!), Peirce's arrow (also known as NOR) is a logical operator that produces a result that is the negation of logical or. This operator returns true, only if both arguments are false, otherwise, it returns false. But Java doesn't have this operator as built-in.
-
-boolean b4 = true && true;   // true, all else cases false 
-boolean b1 = false || false; // false, all else cases true
- 
-  Signature is the combination of the name of a method and its parameter types. 
- java.util.Arrays
- Arrays.toString(array);
- byte[] famousNumbers = { 0, 1, 2, 4, 8, 16, 32, 64 };
-String arrayAsString = Arrays.toString(famousNumbers); 	   
- Arrays.sort(array):
- Arrays.equals(numbers1, numbers2) /same elements in same places
- Arrays.fill(mass, 0, size / 2, 'A'); // size - any int, length.
- Arrays.fill(mass, size / 2, size, 'B'); //or Arrays.fill(arrayName,fromIndex,toIndex,value)
-
- 
- 
- 
-	Course Hacking
- footprinting - первичная, поверхностная разведка. Сбор информации по выбранной цели.
- DoS - deny of serving (from one machine)
- DDoS - multi machines attack
- FUD - помечает софт как "не вирус".
- RAT - средство удалённого администрирования
- Root kit - прячет выполняемые процессы от ОС в которой работает.
- Fishing - поддельные сайты из имейлов для ввода учётных данных.
- SQL Injections - SQL in HTTP
- VPN, Proxy, Tor, VPS
- Key logger - сбор нажатых клавиш и многое другое
- Reverse-shell - обратная оболочка (для контроля другой системы).
- Установка .deb пакета:
-  sudo dpkg -i name.deb  (if error: sudo apt -f install);
-
- apt
-full-upgrade - полное обновление системы, включая удаление несовместимых или больше ненужных пакетов;
-list - список установленных пакетов;
-search - поиск пакетов;
-show - посмотреть информацию о пакете;
-download - скачать пакет в текущую папку;
-edit-sources - открыть с настройками репозиториев в текстовом редакторе.
-source - скачать исходный код пакета в текущую папку;
-build-dep - установить зависимости необходимые для сборки выбранного пакета;
- 
- для доступа к инету из виртуальной машины. Внутри Виртуальной машины
- >cd /etc/NetwokManager/
- >nano NetworkManager.conf
- меняем [ifupdown]=false на true
- >service network-manager restart
- 
- В файл /etc/apt/sources.list добавляем репозитории из ссылки:
- www.kali.org/docs/general-use/kali-linux-sources-list-repositories
- Так же ставим dkms linux-headers-$(uname -r)
- Включаем в виртуальной машине Devices/Insert Guest Additions CD
- Если ошибка, то вручную копируем и запускаем файл типа:
- /mount/cdrom0/VBoxLinuxAdditions.run
- cp -v показывает процесс копирования
- sudo adduser name
- proxychains предустановлен в kali
- nano /etc/proxychains.conf здесь надо socks5, dynamic_chain, proxy_dns
- service tor status 	(start)
- proxychains firefox www.duckduckgo.com проверка настройки.
- dnsleaktest.com
- nmaps ?
- ищем free socks5 proxies Россия китай нидерланды германия
- 	// У меня прокси не заработали
-  Используем tor.
-  search hiddenwiki (тут можно найти прокси) 
-
- VPN
- nano /etc/NetworkManager/NetworkManager.conf 
- меняем [ifupdown] managed=true
- service network-manager restart (у меня не работает, нет сервиса)
- ставим 6 пакетов  network-manager-
- -openvpn-gnome, -pptp, -pptp-gnome, -strongswan, -vpnc, -vpnc-gnome.
- качаем openvpn с vpnbook.com
- openvpn --config lalala.ovpn
- uesrname & pas on site
- в файле nano /etc/resolv.conf  комментим nameserver bla-bla 
- находим opendns в браузере копируем оттуда только два адреса:
- 208.67.222.222 & 208.67.220.220 вставляем их в /etc/resolv.conf  как nameserver.
- Для изменения мак адреса устройства(чаще сетевой карты) используем ifconfig для определения названия устройства
- macchanger -s eth0  ; macchanger -r eth0
- автоматизация crontab -e добавляем строку @reboot macchanger -r eth0   
-   //у меня пропадает инет при смене мака
- Nmap
- сканируют обычно диапазон ip адресов: 10.0.0-255.1-254
- для поиска владельцев адресов есть сайт major ip addresses site
- имея ip через поисковик who is ip можно узнать кто и где
-  //ДНС трафик идёт по порту 53
-  nslookup ip/name быстрый/короткий поиск
- nslookup scanme.nmap.org выдаст ip адрес сайта scanme.nmap.org и наооборот nslookup ip выдаст имя сайта
-  whois + ip in google - a lot of information
-  полезные сайты scanme.nmap.org, magor ip blocks, exploit-db.com.
-
- nmap для сканирования сетей. Используем Nmap (Znmap - графический аналог)
- выводит open/close/filtered(unknown), показывает какие хосты есть в сети и их доступность
-  nmap -oG - 10.0.2.15 -vv > SCAN
- cat SCAN | grep Up | awk -F " " '{print $2}' > SCAN2
- nmap -iL SCAN2 -vv
- awk - работа с текстом. разобрать функционал
- 
- для взлома 
- aircrack-ng (сайт aircrack-ng.org) 
- reaver (нет в репозиториях)
- crunch генерирует пароли. crunch 2 5 abc123 | aricrack-ng    сгенерирует пароли длинной от 2 до 5 из символов abc123 отправит их в aricrack-ng и начнёт немедленно использовать
- если к aircrack-ng добавить аргументы '-w -', то он не будет сохранять пароли а будет просто перебират их  
- aircrack-ng -w passwordlist.txt
- 
- ifconfig wlo1 down
- iwconfig wlo1 mode monitor
- ifconfig wlo1 up
- airmon-ng check wlo1 проверка возможных ошибок
- весь появившийся список надо kill
- далее airodump-ng wlo1 покажет список беспроводных точек доступа. Копируем BSSID необходимой сети
- для более узкого сканированя используем 
- airodump-ng -c 6 -w FILE -bssid BSSID wlo1
- airodump-ng -0 0 -a BSSID wlo1 это деаутентификация устройства подключенного к точке доступа. Для того что бы устройство потеряв сеть преподключилось и мы поймали его макадрес
   
  
 
 
 
- For DevOps
-    Разберитесь, как работает Git и Github, если ещё не сталкивались с этим. Установите GitLab на свой сервер.
-    Познакомьтесь с языками разметки JSON и YAML.
-    Установите и попробуйте поработать в базах данных — не только в MySQL, но и NoSQL. Попробуйте MongoDB.
-    Разберитесь, как управлять конфигурацией сразу нескольких серверов. Например, с помощью Ansible.
-    Сразу настройте мониторинг нагрузки и логи. Попробуйте связку Prometheus, Grafana, Alertmanager.
-    Поищите лучшие решения для деплоя под разные языки — достаточно просто познакомиться, внедрять и разбираться будете на тренировочном или рабочем проекте.
-    Cloud Native Computing Foundation [YouTube, ENG] — много видео с конференций и образовательных вебинаров.
-    DevOps Channel [YouTube, RUS] — видео докладов с профессиональной конференции DevOps в России.
-    The DevOps Handbook [книга, RUS] — одна из самых популярных книг про философию DevOps. В книге есть общие принципы методологии, она рассказывает, на что обращать внимание в первую очередь при работе на любом проекте.
-    Thomas Limoncelli «The Practice of System and Network Administration» [книга, RUS] — много теории и принципов о том, как должно быть устроено системное администрирование.
-    Devops Weekly [книга, ENG] — еженедельный обзор новостей о происходящем в DevOps по всему миру.
-    Devops_deflope [Telegram, RUS] — новости индустрии, анонсы конференций, ссылки на новые интересные статьи и книги.
-    Devops_ru [Telegram, RUS] — русскоязычный чат, где можно спросить совета и попросить помощи по конфигам.
-    Devops.com — большой международный сайт со статьями, вебинарами, подкастами и колонками крупнейших компаний в индустрии.
-    Hangops_Ru — русскоязычное сообщество инженеров DevOps и сочувствующих.
-    Лучшие книги по тому языку, которые вы будете использовать для разработки.
 
 
 
 
-
-
-
- 	REPAIR GRUB IN ARCH
- pacman -S grub efibootmgr
-mkdir /boot/efi
-mount /dev/sda1 /boot/efi
-lsblk # для проверки всё ли норм смонтировано 
-grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi --removable
-grub-mkconfig -o /boot/grub/grub.cfg
- 
- 
- 
- 
- 
- 
- 	НУМЕРАЦИЯ ПОРТОВ
- 	22 ssh, 25 smtp(mail server), 53 dns, 80 http, 9929 nping-echo, 
- 
-win+r devmgmt.msc диспетчер устройств
-инкапсуляция - объединение данных и методов работы с ними в единую сущьность(объект). Возможна инкапсуляция без сокрытия: например, класс содержащий поля и методы, использующие эти поля, но все поля объявлены публичными (тем не менее, он инкапсулирует данные и методы).  А также возможно сокрытие без инкапсуляции: например, класс-хелпер в котором вообще нет полей, но есть публичные и приватные методы. Приватные методы в данном случае являются примером сокрытия.
- 
- The range of an integer type is calculated as −(2n−1) to (2n−1)−1, where n is the number of bits. The range includes 0, which is the reason for subtracting 1 from the upper bound.
-    byte: size 8 bits (1 byte), range from -128 to 127
-    short: size 16 bits (2 bytes), range from -32768 to 32767
-    int: size 32 bits (4 bytes), range from −(231) to (231)−1
-    long: size 64 bits (8 bytes), range from −(263) to (263)−1
-double (64 bits) and float (32 bits)(~6-7 decimal digits for float and ~14-16 decimal digits for double)
- 
  Это список сайтов указанных на Андерсоне:
 Codecademy, Udacity, Code School, Treehouse, FreeCodeCamp, Udemy, Coursera, Codewars, Codingame, Khan Academy, edX, W3Schools, Hackr.io, Bento.io, Solo Learn, Codeasy.net, Edabit, GITHUB, Sitepoint, Crunchzilla, One Month, LearnCode. Academy, Thenewboston, Derek Banas, Programming Knowledge, Softwarehow, Marksheet, Shay Howe, NodeSchool, Learn JS, JavaScript.com, LeetCode, Skillbox, Нетология, Geekbrains, SkillFactory, HTML Academy, Hexlet, JavaRush и другие.
