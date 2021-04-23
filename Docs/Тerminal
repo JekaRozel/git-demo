@@ -12,8 +12,8 @@ sudo dd if=путьК.iso of=/dev/sdb (dev/sdb- путь к флешке, про
 ubuntu-support-status
 
 sudo !! если забыл в предыдущей команде поставить sudo
-cntr+shift+t - new tab
-cntr+shift+w - close tab
+ctr+shift+t - new tab
+ctr+shift+w - close tab
   Программы:
 htop - информация о процессах
 ranger - Total Commander в терминале 
