@@ -113,6 +113,12 @@ xorg-xinit xterm
   
   
   
+sudo apt-get install bluetooth bluez bluez-tools blueman
+sudo rfkill list
+sudo rfkill unblock bluetooth
+sudo hciconig hci0 up
+sudo hcitool scan
+сайт "техничка" 
   
   
   

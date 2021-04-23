@@ -1,5 +1,7 @@
  Setup Arch
  
+ wifi-menu это утилита из пакета netctl, данный пакет в установочном образе был заменён на iwd(утилита iwctl),
+ 
 Создаем разделы на диске через fdisk:
 sgdisk --zap-all /dev/sdX - далить MBR или GPT таблицы
 partprobe
