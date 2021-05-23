@@ -11,6 +11,10 @@ df сведения о файловой системе
 sudo dd if=путьК.iso of=/dev/sdb (dev/sdb- путь к флешке, проверяется df)
 ubuntu-support-status
 
+pkill Chrome* убъёт все процессы со словом Chrome
+!команда:p показывает последний ввод "команды"
+sudo su преерйти к рут польльзователю
+sudo gksudo запуск графических приложений от имени суперпользователя
 sudo !! если забыл в предыдущей команде поставить sudo
 ctr+shift+t - new tab
 ctr+shift+w - close tab
