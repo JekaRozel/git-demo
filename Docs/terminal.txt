@@ -33,6 +33,13 @@ mplayer http://ip.ip.ip.ip (exit U)
 wget https://url - скачать файл
 uname -a
 
+format usb via terminal:
+sudo fdisk -l	(find name)
+df -h	(findout if mounted)
+sudo umount /dev/sdb1	(umount if mounted)
+sudo mkfs -t ext4 -l MyUSB /dev/sdb1
+sudo mkfs -t vfat -n MyUSB /dev/sdb1
+
 	swap
 cat /proc/sys/vm/swappiness
 sudo sysctl -w vm.swappiness=10
