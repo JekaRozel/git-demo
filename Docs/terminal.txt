@@ -5,6 +5,11 @@ ctrl+z выйти с возможностью вернуться
 fg вернуться
 ctrl+c полностью выйти
 
+alsamixer
+add in /etc/asound.conf
+defaults.pcm.card 1
+defaults.ctl.card 1
+
 showin > file записать вывод команды отображающей что-то в файл
 showin >> file ДОписать вывод команды отображающей что-то в файл
 df сведения о файловой системе
