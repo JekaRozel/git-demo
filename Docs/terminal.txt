@@ -5,6 +5,11 @@ ctrl+z выйти с возможностью вернуться
 fg вернуться
 ctrl+c полностью выйти
 
+alsamixer
+add in /etc/asound.conf
+defaults.pcm.card 1
+defaults.ctl.card 1
+
 showin > file записать вывод команды отображающей что-то в файл
 showin >> file ДОписать вывод команды отображающей что-то в файл
 df сведения о файловой системе
@@ -32,6 +37,13 @@ caca-utils - ASCII просмотр графики
 mplayer http://ip.ip.ip.ip (exit U)
 wget https://url - скачать файл
 uname -a
+
+format usb via terminal:
+sudo fdisk -l	(find name)
+df -h	(findout if mounted)
+sudo umount /dev/sdb1	(umount if mounted)
+sudo mkfs -t ext4 -l MyUSB /dev/sdb1
+sudo mkfs -t vfat -n MyUSB /dev/sdb1
 
 	swap
 cat /proc/sys/vm/swappiness
