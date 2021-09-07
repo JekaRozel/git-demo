@@ -1,0 +1,76 @@
+<!-- Сообщаем браузеру как стоит борабатывать эту страницу -->
+<!DOCTYPE html>
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+	<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+	<head>
+		<!-- Заголовок страницы в браузере -->
+		<title> Костяк страницы </title>
+		<!-- Кодировка страницы -->
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8: /> 
+	</head>
+	<!-- Отображаемое тело страницы -->
+	<body>
+
+	</body>
+	</html>
+	
+	
+	<p> блочный, начинается с новой строки
+	<span> строчный, начинается через пробел после текста
+	<p><span>Text</span></p> - можно
+	<span><p>Text</p></span> - нельзя
+	<span><h1>Text</h1></span> - нельзя
+	<span><div>Text</div></span> - нельзя
+	<a target="_blank" href="http://..."> Благодаря target="_blank" содержимое oткроется в ново окне </a>
+	<img src="..." alt="..."> src и alt обязательные атрибуты и не закрываем
+	<h1> </h1>	записывается только один раз на странице
+	Формы:
+	<form action="#" method="get"/"post" enctype="multipart/form-data"></form>
+оболочка всей формы (отвечает за передачу данных (action = " CЮДА ") post для прикреплённых файлов 
+	Интерактивные элементы тега form, те, которые отвечают за то ЧТО будет передано:
+input:
+	<input type="text" name="username" value="ЗначениеПоУмолчанию" /> text/tel qwerty/digital keyboard
+
+
+	CSS подключается к HTML внутри контейнера <head> <link rel="stylesheet" href="css/style.css" /> </head>
+//stylesheet - таблица стилей, а css/style.css афйл в папке с нашим проектом
+	обращение по:
+	имени тега (ко всем одинаковым тегам)		
+	классу (ко всем тегам с одинаковым классом)
+	
+	при нескольких разных значениях одного и того же тега применяются те, которые ниже в списке(последние)
+	приоритет записи: имятега.имякласса приоритетнее одно имени тега или класса
+	вложенность: вкладываем имя тега в имя класса 
+	имякласс> применяется только к параметрам первого уровня (не вложенныз в другие теги)(не распостраняется вложения второго уровня)
+	обнуление границ и отступов:
+	*{ pannidg: 0; margin: 0; border: 0; )
+	*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box; }
+	:focus,:active(outline: none;}
+	a:focus,a:active(outline: none;}
+	nav,footer,header,aside{display: block;}
+	html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%; 
+	}
+	input,button,textarea{font-family: inherit;}
+	input::-ms-clear{display: none;}
+	button{cursor: pointer;}
+	button::-moz-focus-inner {padding:0;border:0;}
+	a, a:visited{text-decoration: none;}
+	a:hover{text-decoration: none;}
+	ul li{list-style: none:}
+	img{vertical-align: top;}
+	h1,h2,h3,h4,h5,h6{font-size:ingerit;font-weight: 400;}
+		
+		
+		
