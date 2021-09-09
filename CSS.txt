@@ -47,6 +47,8 @@ text-decoration с тремя основными свойствами:
     underline — Подчёркивание текста
     line-through — Перечёркивание текста
     overline — Надчёркивание текста
+	none - 
+
 
 Для установки межстрочного расстояния используется правило line-height. В качестве значения используется число.
 
@@ -96,6 +98,24 @@ padding: up right/left down
 padding: up/down right/left
 padding: all 4
 
+	тень
+.p{ text-shadow: 3px 2px 1px #000000; } 3влево 2вниз 1степеньразмытиe
+.p{ text-transform: capitalize/lowercase/uppercase; } большие буквы
+.p{ text-ident: 50px; } с "красной строки"
+.p{ letter-spacing: 2px; } расстояние между буквами
+.p{ word-spacing: 2px; } расстояние между словами
+.p{ white-space: nowrap/normal } без переноса строки
+.p{ line-height: 20px; } межстрочный интервал
+
+width ФИКСИРОВАННАЯ ширина
+max-width не больше ширины
+min-width не меньше ширины
+не работают со span но работают с img
+
+height высота
+max-height
+min-height
+не работают со span но работают с img
 Для управления высотой и шириной блочных элементов используются правила width и height, принимающие значения ширины и высоты соответственно (например, в пикселях или других доступных единицах измерения).
 
  <p class="card" style="background-color: #9c27b0;"></p>
@@ -191,7 +211,9 @@ background-color: rgba(0, 0, 0, 1) // Непрозрачный чёрный фо
     position: absolute;
     top: 100px;
     left: 100px;  }</style>
-
+.p { display: block; } к элементу применимы все блочные атрибуты widht padding etc (превращает строчный элемент в блочный)
+.p { display: inline-block; } строчно-блочный гибрид 
+.p { display: none; } удаляет элемент словно его и не было
 
 Кратко:
 	color: #333333;
@@ -212,5 +234,6 @@ background-color: rgba(0, 0, 0, 1) // Непрозрачный чёрный фо
     height: 25px; высота блока
 	padding: 20px; внутренний отступ
     margin: 10px; внешний отступ
+
 
 
