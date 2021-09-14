@@ -25,7 +25,7 @@
 три потока stdin stdout stderr
 
 socet файл через котоырй программы могут общаться друг с другом
-
+ 
 su - switch user
 Лекции линукс.
 rm -rf/ патч бармена - удалить всё от корня
@@ -166,3 +166,8 @@ whereis, which
 
 
 	/\/\/\/\/\/\/\
+	
+	
+	Переключение рабочего окружения
+	sudo update-alternatives --config x-session-manager
+	
